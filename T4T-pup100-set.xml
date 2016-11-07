@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<!--
+************************************************************************
+Beagle Pup simulation config. This files ties together all the components
+used by FGFS to represent the Beagle Pup. Components include the flight data 
+model, instrument panel, and external 3D model.
+
+June 2016
+************************************************************************
+-->
+
+<PropertyList>
+
+	<sim>
+
+		<description>Beagle Pup (T4T-JSB)</description>
+		<author>Simon'bomber'Morley(FDM)</author>
+		<status>early T4T Trial</status>
+		<rating>
+			<FDM type="int">0</FDM>
+			<systems type="int">0</systems>
+			<model type="int">0</model>
+			<cockpit type="int">0</cockpit>
+		</rating>
+
+		<user>
+			<callsign>Oh so underpowered</callsign>
+		</user>
+   
+		<flight-model>jsb</flight-model>
+		<aero>Flight-Damage-Model</aero>
+  
+		<startup>
+			<splash-texture>pup100-splash.png</splash-texture>
+		</startup>
+
+		<virtual-cockpit archive="y">true</virtual-cockpit>
+		<allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+  
+		<sound>
+			<audible>true</audible>
+			<path>Sounds/pup100-sound.xml</path>
+			<volume type="double">0.26</volume>
+		</sound>
+
+		<panel>
+			<path>Aircraft/Generic/Panels/generic-vfr-panel.xml</path>
+			<visibility>false</visibility>
+		</panel>
+
+		<model>
+			<path>/Models/pup100 - T4T.xml</path>
+		</model> 
+
+  <view n="0">
+	<name>Default</name>
+	<type>lookfrom</type>
+	<internal type="bool">true</internal>
+	<config>
+	    <from-model type="bool">true</from-model>
+	    <from-model-idx type="int">0</from-model-idx>
+	    
+	    <x-offset-m archive="y">0</x-offset-m>
+	    <y-offset-m archive="y">0.63</y-offset-m>
+	    <z-offset-m archive="y">-0.644</z-offset-m>
+	    <pitch-offset-deg>-10</pitch-offset-deg>
+	    <default-field-of-view-deg>72.0</default-field-of-view-deg>
+	    <limits>
+			<enabled type="bool">true</enabled>
+			<left>
+				<heading-max-deg type="double">160</heading-max-deg>
+				<x-offset-max-m type="double">0.15</x-offset-max-m>
+				<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+			</left>
+			<right>
+				<heading-max-deg type="double">160</heading-max-deg>
+				<x-offset-max-m type="double">0.15</x-offset-max-m>
+				<x-offset-threshold-deg type="double">65</x-offset-threshold-deg>
+			</right>
+	    </limits>
+	</config>
+  </view>
+  
+	
+	</sim>	
+	
+</PropertyList>
+
+
+
+

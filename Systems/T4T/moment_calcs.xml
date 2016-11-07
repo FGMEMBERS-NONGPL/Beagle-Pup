@@ -1,0 +1,692 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2016 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+This work is licensed under the 
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
+To view a copy of this license, 
+visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or 
+send a letter to Creative Commons, PO Box 1866, Mountain View, Cd 94042, USA.
+
+Attribution,  You must give appropriate credit, provide a link to the license, 
+and indiCdte if changes were made. You may do so in any reasonable manner, 
+but not in any way that suggests the licensor endorses you or your use.
+
+NonCommercial,  You may not use the material for commercial purposes.
+
+ShareAlike,  If you remix, transform, or build upon the material, 
+you must distribute your contributions under the same license as the original. 
+
+**************************************************************************
+-->
+
+<system name="moment_calcs">
+
+	<channel name="wing" execute="T4T/execute">
+
+	<fcs_function name="T4T/velocities/w-gf_left-aero-fps">
+		<function>
+			<product>			
+				<property>T4T/velocities/wing_left/downwash-aero-fps</property>
+				<table>
+					<independentVar>aero/h_b-mac-ft</independentVar>
+					<tableData>
+						0		1
+						1.1		0
+					</tableData>
+				</table>
+			</product>
+		</function>
+	</fcs_function>	
+	
+	<fcs_function name="T4T/velocities/w-gf_right-aero-fps">
+		<function>
+			<product>			
+				<property>T4T/velocities/wing_right/downwash-aero-fps</property>
+				<table>
+					<independentVar>aero/h_b-mac-ft</independentVar>
+					<tableData>
+						0		1
+						1.1		0
+					</tableData>
+				</table>
+			</product>
+		</function>
+	</fcs_function>
+	
+<!--	 
+	<fcs_function name="T4T/velocities/w-gf_left-aero-fps">
+		<function>		
+			<v>0</v>
+		</function>
+		<output> T4T/velocities/w-gf_right-aero-fps </output>
+	</fcs_function>	
+-->	
+
+	
+    <pure_gain name="inertia/cg-x-ft">
+		<input>inertia/cg-x-in</input>
+		<gain>0.08333</gain>
+    </pure_gain>
+
+<!-- WING CENTRE OF LIFT CALCS -->
+
+	<!-- ####   left   #### -->
+
+	<fcs_function name="T4T/moments/wing_left/p-lbsft">
+		<function>
+		<description>left roll moment</description>
+			<sum>
+				<product>
+					<property>T4T/forces/wing_left/_1_lift-lbs</property>
+					<property>T4T/structure/wing/_1_y</property> <!-- lift force acts at -->
+					<value> -1 </value>
+				</product>
+				<product>
+					<property>T4T/forces/wing_left/_2_lift-lbs</property>
+					<property>T4T/structure/wing/_2_y</property> <!-- lift force acts at -->
+					<value> -1 </value>
+				</product>
+				<product>
+					<property>T4T/forces/wing_left/_3_lift-lbs</property>
+					<property>T4T/structure/wing/_3_y</property> <!-- lift force acts at -->
+					<value> -1 </value>
+				</product>
+				<product>
+					<property>T4T/forces/wing_left/_4_lift-lbs</property>
+					<property>T4T/structure/wing/_4_y</property> <!-- lift force acts at -->
+					<value> -1 </value>
+				</product>
+				<product>
+					<property>T4T/forces/wing_left/_5_lift-lbs</property>
+					<property>T4T/structure/wing/_5_y</property> <!-- lift force acts at -->
+					<value> -1 </value>
+				</product>
+				<product>
+					<property>T4T/forces/wing_left/_6_lift-lbs</property>
+					<property>T4T/structure/wing/_6_y</property> <!-- lift force acts at -->
+					<value> -1 </value>
+				</product>
+				<product>
+					<property>T4T/forces/wing_left/_7_lift-lbs</property>
+					<property>T4T/structure/wing/_7_y</property> <!-- lift force acts at -->
+					<value> -1 </value>
+				</product>
+				<product>
+					<property>T4T/forces/wing_left/_8_lift-lbs</property>
+					<property>T4T/structure/wing/_8_y</property> <!-- lift force acts at -->
+					<value> -1 </value>
+				</product>
+			</sum>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/moments/CoP-Y_wing_left-ft">
+		<function>
+		<description>left wing Centre of lift in the Y axis</description>
+			<quotient>
+				<property>T4T/moments/wing_left/p-lbsft</property>
+				<property>T4T/forces/wing_left/lift-lbs</property>		
+			</quotient>
+		</function>
+	</fcs_function>
+		
+	<fcs_function name="T4T/moments/wing_right/p-lbsft">
+		<function>
+		<description>right roll moment</description>
+			<sum>
+				<product>
+					<property>T4T/forces/wing_right/_1_lift-lbs</property>
+					<property>T4T/structure/wing/_1_y</property> <!-- lift force acts at -->
+				</product>
+				<product>
+					<property>T4T/forces/wing_right/_2_lift-lbs</property>
+					<property>T4T/structure/wing/_2_y</property> <!-- lift force acts at -->
+				</product>
+				<product>
+					<property>T4T/forces/wing_right/_3_lift-lbs</property>
+					<property>T4T/structure/wing/_3_y</property> <!-- lift force acts at -->
+				</product>
+				<product>
+					<property>T4T/forces/wing_right/_4_lift-lbs</property>
+					<property>T4T/structure/wing/_4_y</property> <!-- lift force acts at -->
+				</product>
+				<product>
+					<property>T4T/forces/wing_right/_5_lift-lbs</property>
+					<property>T4T/structure/wing/_5_y</property> <!-- lift force acts at -->
+				</product>
+				<product>
+					<property>T4T/forces/wing_right/_6_lift-lbs</property>
+					<property>T4T/structure/wing/_6_y</property> <!-- lift force acts at -->
+				</product>
+				<product>
+					<property>T4T/forces/wing_right/_7_lift-lbs</property>
+					<property>T4T/structure/wing/_7_y</property> <!-- lift force acts at -->
+				</product>
+				<product>
+					<property>T4T/forces/wing_right/_8_lift-lbs</property>
+					<property>T4T/structure/wing/_8_y</property> <!-- lift force acts at -->
+				</product>
+			</sum>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/moments/CoP-Y_wing_right-ft">
+		<function>
+		<description>right wing Centre of lift in the Y axis</description>
+			<quotient>
+				<property>T4T/moments/wing_right/p-lbsft</property>
+				<property>T4T/forces/wing_right/lift-lbs</property>		
+			</quotient>
+		</function>
+	</fcs_function>
+	
+	<fcs_function>
+		<function>
+			<product>
+				<value> 12 </value>
+				<quotient>
+					<sum>
+						<property>T4T/moments/wing_left/p-lbsft</property>
+						<property>T4T/moments/wing_right/p-lbsft</property>
+					</sum>
+					<property>T4T/forces/wing/lift-lbs</property>
+				</quotient>
+			</product>
+		</function>
+		<output>external_reactions/wing/location-y-in</output>
+	</fcs_function>
+
+	<fcs_function name="T4T/moments/Cord_wing_left_at_CoP-ft">
+		<function>
+		<description>left wing cord width at the centre of lift</description>
+				<table>
+					<independentVar>T4T/moments/CoP-Y_wing_left-ft</independentVar>
+					<tableData>
+						-14.9		2.75 	<!-- Distance Y, cord width-ft -->
+						0.00		5.08 	<!-- Distance Y, cord width-ft -->
+						14.9		2.75 	<!-- Distance Y, cord width-ft -->
+					</tableData>
+				</table>
+		</function>
+	</fcs_function>
+
+	<scheduled_gain name="T4T/moments/wing_left_Cmalpha_delta-ft">
+		<description>adjustment to wings centre of pressure with changing alpha</description>
+		<input>T4T/moments/Cord_wing_left_at_CoP-ft</input>
+		<table>
+			<independentVar lookup="row">T4T/aero/wing_left/_4_AoA-rad</independentVar>
+			<independentVar lookup="column">fcs/flap-pos-norm</independentVar>			
+			<tableData>
+						0		1	
+				-1.5708	-0.250	-0.250
+				-1.3963	-0.242	-0.242
+				-1.2217	-0.221	-0.221
+				-1.0472	-0.188	-0.188
+				-0.8727	-0.147	-0.147
+				-0.6981	-0.034	-0.166
+				-0.6807	-0.034	-0.172
+				-0.6632	-0.034	-0.177
+				-0.6458	-0.034	-0.179
+				-0.6283	-0.034	-0.185
+				-0.6109	-0.034	-0.19
+				-0.5934	-0.034	-0.191
+				-0.5760	-0.034	-0.198
+				-0.5585	-0.034	-0.209
+				-0.5411	-0.034	-0.214
+				-0.5236	-0.036	-0.223
+				-0.5061	-0.036	-0.233
+				-0.4887	-0.037	-0.254
+				-0.4712	-0.038	-0.276
+				-0.4538	-0.038	-0.306
+				-0.4363	-0.039	-0.332
+				-0.4189	-0.04	-0.355
+				-0.4014	-0.041	-0.368
+				-0.3840	-0.043	-0.377
+				-0.3665	-0.044	-0.386
+				-0.3491	-0.045	-0.393
+				-0.3316	-0.048	-0.399
+				-0.3142	-0.05	-0.406
+				-0.2967	-0.056	-0.411
+				-0.2793	-0.072	-0.418
+				-0.2618	-0.08	-0.423
+				-0.2443	-0.084	-0.428
+				-0.2269	-0.087	-0.432
+				-0.2094	-0.09	-0.436
+				-0.1920	-0.093	-0.44
+				-0.1745	-0.096	-0.443
+				-0.1571	-0.099	-0.446
+				-0.1396	-0.101	-0.448
+				-0.1222	-0.104	-0.452
+				-0.1047	-0.106	-0.454
+				-0.0873	-0.109	-0.456
+				-0.0698	-0.111	-0.458
+				-0.0524	-0.114	-0.459
+				-0.0349	-0.116	-0.46
+				-0.0175	-0.118	-0.461
+				0.0000	-0.121	-0.462
+				0.0175	-0.123	-0.462
+				0.0349	-0.125	-0.462
+				0.0524	-0.128	-0.462
+				0.0698	-0.13	-0.462
+				0.0873	-0.132	-0.462
+				0.1047	-0.135	-0.461
+				0.1222	-0.137	-0.46
+				0.1396	-0.14	-0.458
+				0.1571	-0.14	-0.456
+				0.1745	-0.142	-0.454
+				0.1920	-0.143	-0.452
+				0.2094	-0.145	-0.45
+				0.2269	-0.146	-0.447
+				0.2443	-0.147	-0.445
+				0.2618	-0.148	-0.442
+				0.2793	-0.149	-0.438
+				0.2967	-0.15	-0.398
+				0.3142	-0.15	-0.374
+				0.3316	-0.15	-0.346
+				0.3491	-0.149	-0.324
+				0.3665	-0.149	-0.3
+				0.3840	-0.147	-0.294
+				0.4014	-0.145	-0.285
+				0.4189	-0.138	-0.274
+				0.4363	-0.135	-0.271
+				0.4538	-0.13	-0.258
+				0.4712	-0.127	-0.255
+				0.4887	-0.124	-0.238
+				0.5061	-0.122	-0.219
+				0.5236	-0.121	-0.214
+				0.5411	-0.119	-0.206
+				0.5585	-0.117	-0.2
+				0.5760	-0.116	-0.192
+				0.5934	-0.115	-0.188
+				0.6109	-0.112	-0.183
+				0.6283	-0.109	-0.18
+				0.6458	-0.109	-0.176
+				0.6632	-0.106	-0.173
+				0.6807	-0.107	-0.169
+				0.6981	-0.107	-0.165
+				0.8727	-0.147	-0.147
+				1.0472	-0.188	-0.188
+				1.2217	-0.221	-0.221
+				1.3963	-0.242	-0.242
+				1.5708	-0.250	-0.250
+			</tableData>
+		</table>
+	</scheduled_gain>
+
+	<fcs_function name="T4T/moments/CoP-X_wing_left-ft">
+		<function>
+		<description>left wing Centre of lift in the X axis</description>
+			<difference>
+				<table>
+					<independentVar lookup="row">T4T/moments/CoP-Y_wing_left-ft</independentVar>
+					<tableData>
+						-14.9		2.9 	<!-- Distance Y, X of the 25% mac -->						
+						0.00		2.6 	<!-- Distance Y, X of the 25% mac -->						
+						14.9		2.9 	<!-- Distance Y, X of the 25% mac -->						
+					</tableData>
+				</table>
+				<property>T4T/moments/wing_left_Cmalpha_delta-ft</property>				
+			</difference>
+		</function>
+	</fcs_function>
+
+	<fcs_function name="T4T/moments/wing_left/q_arm-ft">
+		<function>
+		<description>left wing pitch moment armature</description>
+			<difference>
+				<property>T4T/moments/CoP-X_wing_left-ft</property>
+				<property>inertia/cg-x-ft</property>
+			</difference>		
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/moments/wing_left/q-lbsft">
+		<function>
+		<description>left wing pitch moment</description>
+			<product>
+				<property>T4T/forces/wing_left/lift-lbs</property>
+				<property>T4T/moments/wing_left/q_arm-ft</property>
+			</product>
+		</function>
+	</fcs_function>	
+
+	<!-- ####   right   #### -->	
+	
+	<fcs_function name="T4T/moments/Cord_wing_right_at_CoP-ft">
+		<function>
+		<description>right wing cord width at the centre of lift</description>
+				<table>
+					<independentVar lookup="row">T4T/moments/CoP-Y_wing_right-ft</independentVar>
+					<tableData>
+						-14.9		2.75 	<!-- Distance Y, cord width-ft -->						
+						0.00		5.08 	<!-- Distance Y, cord width-ft -->						
+						14.9		2.75 	<!-- Distance Y, cord width-ft -->						
+					</tableData>
+				</table>
+		</function>
+	</fcs_function>
+	
+	<scheduled_gain name="T4T/moments/wing_right_Cmalpha_delta-ft"> <!-- 58kts -->
+		<description>adjustment to wings centre of pressure with changing alpha</description>
+		<input>T4T/moments/Cord_wing_right_at_CoP-ft</input>
+		<table>
+			<independentVar lookup="row">T4T/aero/wing_right/_4_AoA-rad</independentVar>
+			<independentVar lookup="column">fcs/flap-pos-norm</independentVar>			
+			<tableData>
+						0		1	
+				-1.5708	-0.250	-0.250
+				-1.3963	-0.242	-0.242
+				-1.2217	-0.221	-0.221
+				-1.0472	-0.188	-0.188
+				-0.8727	-0.147	-0.147
+				-0.6981	-0.034	-0.166
+				-0.6807	-0.034	-0.172
+				-0.6632	-0.034	-0.177
+				-0.6458	-0.034	-0.179
+				-0.6283	-0.034	-0.185
+				-0.6109	-0.034	-0.19
+				-0.5934	-0.034	-0.191
+				-0.5760	-0.034	-0.198
+				-0.5585	-0.034	-0.209
+				-0.5411	-0.034	-0.214
+				-0.5236	-0.036	-0.223
+				-0.5061	-0.036	-0.233
+				-0.4887	-0.037	-0.254
+				-0.4712	-0.038	-0.276
+				-0.4538	-0.038	-0.306
+				-0.4363	-0.039	-0.332
+				-0.4189	-0.04	-0.355
+				-0.4014	-0.041	-0.368
+				-0.3840	-0.043	-0.377
+				-0.3665	-0.044	-0.386
+				-0.3491	-0.045	-0.393
+				-0.3316	-0.048	-0.399
+				-0.3142	-0.05	-0.406
+				-0.2967	-0.056	-0.411
+				-0.2793	-0.072	-0.418
+				-0.2618	-0.08	-0.423
+				-0.2443	-0.084	-0.428
+				-0.2269	-0.087	-0.432
+				-0.2094	-0.09	-0.436
+				-0.1920	-0.093	-0.44
+				-0.1745	-0.096	-0.443
+				-0.1571	-0.099	-0.446
+				-0.1396	-0.101	-0.448
+				-0.1222	-0.104	-0.452
+				-0.1047	-0.106	-0.454
+				-0.0873	-0.109	-0.456
+				-0.0698	-0.111	-0.458
+				-0.0524	-0.114	-0.459
+				-0.0349	-0.116	-0.46
+				-0.0175	-0.118	-0.461
+				0.0000	-0.121	-0.462
+				0.0175	-0.123	-0.462
+				0.0349	-0.125	-0.462
+				0.0524	-0.128	-0.462
+				0.0698	-0.13	-0.462
+				0.0873	-0.132	-0.462
+				0.1047	-0.135	-0.461
+				0.1222	-0.137	-0.46
+				0.1396	-0.14	-0.458
+				0.1571	-0.14	-0.456
+				0.1745	-0.142	-0.454
+				0.1920	-0.143	-0.452
+				0.2094	-0.145	-0.45
+				0.2269	-0.146	-0.447
+				0.2443	-0.147	-0.445
+				0.2618	-0.148	-0.442
+				0.2793	-0.149	-0.438
+				0.2967	-0.15	-0.398
+				0.3142	-0.15	-0.374
+				0.3316	-0.15	-0.346
+				0.3491	-0.149	-0.324
+				0.3665	-0.149	-0.3
+				0.3840	-0.147	-0.294
+				0.4014	-0.145	-0.285
+				0.4189	-0.138	-0.274
+				0.4363	-0.135	-0.271
+				0.4538	-0.13	-0.258
+				0.4712	-0.127	-0.255
+				0.4887	-0.124	-0.238
+				0.5061	-0.122	-0.219
+				0.5236	-0.121	-0.214
+				0.5411	-0.119	-0.206
+				0.5585	-0.117	-0.2
+				0.5760	-0.116	-0.192
+				0.5934	-0.115	-0.188
+				0.6109	-0.112	-0.183
+				0.6283	-0.109	-0.18
+				0.6458	-0.109	-0.176
+				0.6632	-0.106	-0.173
+				0.6807	-0.107	-0.169
+				0.6981	-0.107	-0.165
+				0.8727	-0.147	-0.147
+				1.0472	-0.188	-0.188
+				1.2217	-0.221	-0.221
+				1.3963	-0.242	-0.242
+				1.5708	-0.250	-0.250
+			</tableData>
+		</table>
+	</scheduled_gain>
+	
+	<fcs_function name="T4T/moments/CoP-X_wing_right-ft">
+		<function>
+		<description>right wing Centre of lift in the X axis</description>
+			<difference>
+				<table>
+					<independentVar>T4T/moments/CoP-Y_wing_right-ft</independentVar>
+					<tableData>
+						-14.9		2.9 	<!-- Distance Y, X of the 25% mac -->						
+						0.00		2.6 	<!-- Distance Y, X of the 25% mac -->						
+						14.9		2.9 	<!-- Distance Y, X of the 25% mac -->						
+					</tableData>
+				</table>
+				<property>T4T/moments/wing_right_Cmalpha_delta-ft</property>				
+			</difference>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/moments/wing_right/q_arm-ft">
+		<function>
+		<description>right wing pitch moment armature</description>
+			<difference>
+				<property>T4T/moments/CoP-X_wing_right-ft</property>
+				<property>inertia/cg-x-ft</property>
+			</difference>		
+		</function>
+	</fcs_function>
+
+	
+	<fcs_function name="T4T/moments/wing_right/q-lbsft">
+		<function>
+		<description>right wing pitch moment</description>
+			<product>
+				<property>T4T/forces/wing_right/lift-lbs</property>
+				<property>T4T/moments/wing_right/q_arm-ft</property>
+			</product>
+		</function>
+	</fcs_function>
+		
+	<fcs_function>
+		<function>
+			<sum>
+				<property>inertia/cg-x-in</property>
+				<product>
+					<value> 12 </value>
+					<quotient>
+						<sum>
+							<property>T4T/moments/wing_left/q-lbsft</property>
+							<property>T4T/moments/wing_right/q-lbsft</property>
+						</sum>
+						<property>T4T/forces/wing/lift-lbs</property>		
+					</quotient>
+				</product>
+			</sum>
+		</function>
+		<output>external_reactions/wing/location-x-in</output>
+	</fcs_function>
+		
+	<fcs_function name="T4T/moments/CoP-Z_wing_left-ft">
+		<function>
+		<description>left wing Centre of lift in the Z axis</description>
+				<table>
+					<independentVar><property>T4T/moments/CoP-Y_wing_left-ft</property></independentVar>
+					<tableData>
+						-14.9		0.7 	<!-- Distance Y, cord width-ft -->						
+						0.00		-1.13 	<!-- Distance Y, cord width-ft -->						
+						14.9		0.7 	<!-- Distance Y, cord width-ft -->						
+					</tableData>
+				</table>
+		</function>
+	</fcs_function>	
+	
+	<fcs_function name="T4T/moments/CoP-Z_wing_right-ft">
+		<function>
+		<description>right wing Centre of lift in the Z axis</description>
+				<table>
+					<independentVar><property>T4T/moments/CoP-Y_wing_right-ft</property></independentVar>
+					<tableData>
+						-14.9		0.7 	<!-- Distance Y, cord width-ft -->						
+						0.00		-1.13 	<!-- Distance Y, cord width-ft -->						
+						14.9		0.7 	<!-- Distance Y, cord width-ft -->						
+					</tableData>
+				</table>
+		</function>
+	</fcs_function>
+	
+	<fcs_function>
+		<function>
+			<product>
+				<value> 12 </value>
+				<quotient>
+					<sum>
+						<product>
+							<property>T4T/forces/wing_left/lift-lbs</property>
+							<property>T4T/moments/CoP-Z_wing_left-ft</property>
+						</product>
+						<product>
+							<property>T4T/forces/wing_right/lift-lbs</property>
+							<property>T4T/moments/CoP-Z_wing_right-ft</property>
+						</product>
+					</sum>
+					<property>T4T/forces/wing/lift-lbs</property>
+				</quotient>
+			</product>
+		</function>
+		<output>external_reactions/wing/location-z-in</output>
+	</fcs_function>	
+		
+	
+	</channel>
+	
+	<channel name="h-stab" execute="T4T/execute">
+	
+	<fcs_function name="T4T/moments/h-stab_left/p-lbsft">
+		<function>
+		<description>left roll moment</description>		
+			<product>
+				<property>T4T/forces/h-stab_left/lift-lbs</property>
+				<property>T4T/structure/h-stab/y</property> <!-- lift force acts at -->
+				<value> -1 </value>
+			</product>
+		</function>
+	</fcs_function>
+		
+	<fcs_function name="T4T/moments/h-stab_right/p-lbsft">
+		<function>
+		<description>right roll moment</description>		
+			<product>
+				<property>T4T/forces/h-stab_right/lift-lbs</property>
+				<property>T4T/structure/h-stab/y</property> <!-- lift force acts at -->
+			</product>
+		</function>
+	</fcs_function>
+ 	
+	<fcs_function>
+		<function>
+			<product>
+				<value> 12 </value>
+				<quotient>
+					<sum>
+						<property>T4T/moments/h-stab_left/p-lbsft</property>
+						<property>T4T/moments/h-stab_right/p-lbsft</property>
+					</sum>
+					<property>T4T/forces/h-stab/lift-lbs</property>
+				</quotient>
+			</product>
+		</function>
+		<output>external_reactions/h-stab/location-y-in</output>
+	</fcs_function>
+
+	<fcs_function name="T4T/moments/h-stab/q_arm-ft">
+		<function>
+		<description>h-stab pitch moment armature</description>
+			<difference>
+				<property>T4T/structure/h-stab/x</property>
+				<property>inertia/cg-x-ft</property>
+			</difference>		
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/moments/h-stab/q-lbsft">
+		<function>
+		<description>h-stab pitch moment</description>
+			<product>
+				<property>T4T/forces/h-stab/lift-lbs</property>
+				<property>T4T/moments/h-stab/q_arm-ft</property>
+			</product>		
+		</function>
+	</fcs_function>
+	
+	<fcs_function>
+		<function>
+			<sum>
+				<property>inertia/cg-x-in</property>
+				<product>
+					<value> 12 </value>
+					<quotient>
+						<property>T4T/moments/h-stab/q-lbsft</property>
+						<property>T4T/forces/h-stab/lift-lbs</property>		
+					</quotient>
+				</product>
+			</sum>
+		</function>
+		<output>external_reactions/h-stab/location-x-in</output>
+	</fcs_function>
+	
+	<fcs_function>
+		<function>
+			<sum>
+				<property>inertia/cg-x-in</property>
+				<product>
+					<value> 12 </value>
+					<quotient>
+						<sum>
+							<property>T4T/moments/wing_left/q-lbsft</property>
+							<property>T4T/moments/wing_right/q-lbsft</property>
+							<property>T4T/moments/h-stab/q-lbsft</property>							
+						</sum>							
+						<sum>						
+							<property>T4T/forces/wing/lift-lbs</property>							
+							<property>T4T/forces/h-stab/lift-lbs</property>
+						</sum>							
+					</quotient>
+				</product>
+			</sum>
+		</function>
+		<output>T4T/moments/centre_of_lift-x-in</output>
+	</fcs_function>
+	
+	</channel>	
+	
+	
+
+	
+
+	
+</system>

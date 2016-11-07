@@ -1,0 +1,748 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2016 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+This work is licensed under the 
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
+To view a copy of this license, 
+visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or 
+send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+Attribution,  You must give appropriate credit, provide a link to the license, 
+and indicate if changes were made. You may do so in any reasonable manner, 
+but not in any way that suggests the licensor endorses you or your use.
+
+NonCommercial,  You may not use the material for commercial purposes.
+
+ShareAlike,  If you remix, transform, or build upon the material, 
+you must distribute your contributions under the same license as the original. 
+
+**************************************************************************
+-->
+
+<system name="damage_test">
+
+	<channel name="lift efficiency">
+	
+	<fcs_function name="T4T/metrics/flap_modifier">
+		<function>
+			<table>
+				<independentVar>fcs/flap-pos-norm</independentVar>
+				<tableData>
+					0		1						
+					1		1.48											
+				</tableData>
+			</table>
+		</function>
+	</fcs_function>
+		
+	<!--
+	<fcs_function name="T4T/metrics/lift_efficiency">
+        <function>		
+			<propert>T4T/metrics/lift_efficiency</property>
+        </function>
+	</fcs_function>
+	-->	
+	
+	<!-- #### left #### -->	
+	
+
+	
+	<fcs_function name="T4T/aero/left_sweep">
+		<function>
+			<table>
+				<independentVar>aero/beta-rad</independentVar>
+				<tableData>
+				-0.034906585	1.0006
+				-0.0174532925	1.0002
+				0				1.0000
+				0.0174532925	0.9998
+				0.034906585		0.9994
+				</tableData>
+			</table>
+		</function>
+	</fcs_function>	
+	
+	<fcs_function name="T4T/aero/wing_left/_1_Cl_area-sqft">
+		<function>	
+			<product>			
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/damage/wing_left_1</property>					
+				<property>T4T/structure/wing/_1_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	
+	<switch>
+		<default value="T4T/damage/wing_left_2"/>
+		<test value="0">
+			T4T/damage/wing_left_1 EQ 0
+		</test>
+		<output> T4T/damage/wing_left_2 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_left/_2_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/damage/wing_left_2</property>					
+				<property>T4T/structure/wing/_2_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+		
+	<switch>
+		<default value="T4T/damage/wing_left_3"/>
+		<test value="0">
+			T4T/damage/wing_left_2 EQ 0
+		</test>
+		<output> T4T/damage/wing_left_3 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_left/_3_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/damage/wing_left_3</property>					
+				<property>T4T/structure/wing/_3_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+		
+	<switch>
+		<default value="T4T/damage/wing_left_4"/>
+		<test value="0">
+			T4T/damage/wing_left_3 EQ 0
+		</test>
+		<output> T4T/damage/wing_left_4 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_left/_4_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/damage/wing_left_4</property>					
+				<property>T4T/structure/wing/_4_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+
+	<switch>
+		<default value="T4T/damage/wing_left_5"/>
+		<test value="0">
+			T4T/damage/wing_left_4 EQ 0
+		</test>
+		<output> T4T/damage/wing_left_5 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_left/_5_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/damage/wing_left_5</property>					
+				<property>T4T/structure/wing/_5_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+
+	<switch>
+		<default value="T4T/damage/wing_left_6"/>
+		<test value="0">
+			T4T/damage/wing_left_5 EQ 0
+		</test>
+		<output> T4T/damage/wing_left_6 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_left/_6_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/damage/wing_left_6</property>					
+				<property>T4T/structure/wing/_6_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+
+	<switch>
+		<default value="T4T/damage/wing_left_7"/>
+		<test value="0">
+			T4T/damage/wing_left_6 EQ 0
+		</test>
+		<output> T4T/damage/wing_left_7 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_left/_7_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/damage/wing_left_7</property>					
+				<property>T4T/structure/wing/_7_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+	
+	<switch>
+		<default value="T4T/damage/wing_left_8"/>
+		<test value="0">
+			T4T/damage/wing_left_7 EQ 0
+		</test>
+		<output> T4T/damage/wing_left_8 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_left/_8_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/damage/wing_left_8</property>					
+				<property>T4T/structure/wing/_8_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+	
+	<!-- #### right #### -->
+
+	<fcs_function name="T4T/aero/right_sweep">
+		<function>
+			<table>
+				<independentVar>aero/beta-rad</independentVar>
+				<tableData>
+				-0.034906585	0.9994
+				-0.0174532925	0.9998
+				0				1.0000
+				0.0174532925	1.0002
+				0.034906585		1.0006
+				</tableData>
+			</table>
+		</function>
+	</fcs_function>	
+		
+	<fcs_function name="T4T/aero/wing_right/_1_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/right_sweep</property>			
+				<property>T4T/damage/wing_right_1</property>					
+				<property>T4T/structure/wing/_1_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	
+	<switch>
+		<default value="T4T/damage/wing_right_2"/>
+		<test value="0">
+			T4T/damage/wing_right_1 EQ 0
+		</test>
+		<output> T4T/damage/wing_right_2 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_right/_2_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>				
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/damage/wing_right_2</property>					
+				<property>T4T/structure/wing/_2_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+		
+	<switch>
+		<default value="T4T/damage/wing_right_3"/>
+		<test value="0">
+			T4T/damage/wing_right_2 EQ 0
+		</test>
+		<output> T4T/damage/wing_right_3 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_right/_3_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/damage/wing_right_3</property>					
+				<property>T4T/structure/wing/_3_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>		
+	
+	<switch>
+		<default value="T4T/damage/wing_right_4"/>
+		<test value="0">
+			T4T/damage/wing_right_3 EQ 0
+		</test>
+		<output> T4T/damage/wing_right_4 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_right/_4_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/damage/wing_right_4</property>					
+				<property>T4T/structure/wing/_4_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+	
+	<switch>
+		<default value="T4T/damage/wing_right_5"/>
+		<test value="0">
+			T4T/damage/wing_right_4 EQ 0
+		</test>
+		<output> T4T/damage/wing_right_5 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_right/_5_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/damage/wing_right_5</property>					
+				<property>T4T/structure/wing/_5_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	
+	<switch>
+		<default value="T4T/damage/wing_right_6"/>
+		<test value="0">
+			T4T/damage/wing_right_5 EQ 0
+		</test>
+		<output> T4T/damage/wing_right_6 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_right/_6_Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/damage/wing_right_6</property>					
+				<property>T4T/structure/wing/_6_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+	
+	<switch>
+		<default value="T4T/damage/wing_right_7"/>
+		<test value="0">
+			T4T/damage/wing_right_6 EQ 0
+		</test>
+		<output> T4T/damage/wing_right_7 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_right/_7_Cl_area-sqft">
+		<function>	
+			<product>	
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/damage/wing_right_7</property>					
+				<property>T4T/structure/wing/_7_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+	
+	<switch>
+		<default value="T4T/damage/wing_right_8"/>
+		<test value="0">
+			T4T/damage/wing_right_7 EQ 0
+		</test>
+		<output> T4T/damage/wing_right_8 </output>
+	</switch>	
+	<fcs_function name="T4T/aero/wing_right/_8_Cl_area-sqft">
+		<function>	
+			<product>	
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/damage/wing_right_8</property>					
+				<property>T4T/structure/wing/_8_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+	
+	<!-- #### tail #### -->
+	
+	<fcs_function name="T4T/aero/v-stab/Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/damage/v-stab</property>					
+				<property>T4T/structure/v-stab/area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+	
+	<fcs_function name="T4T/aero/h-stab_left/Cl_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/damage/h-stab_left</property>					
+				<property>T4T/structure/h-stab/area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+	
+	<fcs_function name="T4T/aero/h-stab_right/Cl_area-sqft">
+		<function>	
+			<product>	
+				<property>T4T/metrics/lift_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/damage/h-stab_right</property>					
+				<property>T4T/structure/h-stab/area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>	
+		
+	</channel>	
+		
+	
+	<channel name="drag efficiency">	
+	
+	<fcs_function name="T4T/aero/wing_left/_1_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/structure/wing/_1_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_left/_1_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_left_1 EQ 0
+		</test>
+		<output> T4T/aero/wing_left/_1_Cd_area-sqft </output>
+	</switch>
+		
+	<fcs_function name="T4T/aero/wing_left/_2_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/structure/wing/_2_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_left/_2_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_left_2 EQ 0
+		</test>
+		<output> T4T/aero/wing_left/_2_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_left/_3_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/structure/wing/_3_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_left/_3_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_left_3 EQ 0
+		</test>
+		<output> T4T/aero/wing_left/_3_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_left/_4_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/structure/wing/_4_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_left/_4_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_left_4 EQ 0
+		</test>
+		<output> T4T/aero/wing_left/_4_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_left/_5_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/structure/wing/_5_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_left/_5_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_left_5 EQ 0
+		</test>
+		<output> T4T/aero/wing_left/_5_Cd_area-sqft </output>
+	</switch>
+
+	<fcs_function name="T4T/aero/wing_left/_6_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/structure/wing/_6_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_left/_6_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_left_6 EQ 0
+		</test>
+		<output> T4T/aero/wing_left/_6_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_left/_7_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/structure/wing/_7_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_left/_7_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_left_7 EQ 0
+		</test>
+		<output> T4T/aero/wing_left/_7_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_left/_8_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/left_sweep</property>					
+				<property>T4T/structure/wing/_8_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_left/_8_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_left_8 EQ 0
+		</test>
+		<output> T4T/aero/wing_left/_8_Cd_area-sqft </output>
+	</switch>	
+	
+	
+	<!-- #### right #### -->	
+	
+	<fcs_function name="T4T/aero/wing_right/_1_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/structure/wing/_1_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_right/_1_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_right_1 EQ 0
+		</test>
+		<output> T4T/aero/wing_right/_1_Cd_area-sqft </output>
+	</switch>
+		
+	<fcs_function name="T4T/aero/wing_right/_2_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/structure/wing/_2_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_right/_2_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_right_2 EQ 0
+		</test>
+		<output> T4T/aero/wing_right/_2_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_right/_3_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/structure/wing/_3_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_right/_3_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_right_3 EQ 0
+		</test>
+		<output> T4T/aero/wing_right/_3_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_right/_4_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/structure/wing/_4_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_right/_4_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_right_4 EQ 0
+		</test>
+		<output> T4T/aero/wing_right/_4_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_right/_5_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/flap_modifier</property>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/structure/wing/_5_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_right/_5_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_right_5 EQ 0
+		</test>
+		<output> T4T/aero/wing_right/_5_Cd_area-sqft </output>
+	</switch>
+
+	<fcs_function name="T4T/aero/wing_right/_6_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/structure/wing/_6_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_right/_6_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_right_6 EQ 0
+		</test>
+		<output> T4T/aero/wing_right/_6_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_right/_7_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/structure/wing/_7_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_right/_7_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_right_7 EQ 0
+		</test>
+		<output> T4T/aero/wing_right/_7_Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/wing_right/_8_Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/structure/wing/_8_area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/wing_right/_8_Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/wing_right_8 EQ 0
+		</test>
+		<output> T4T/aero/wing_right/_8_Cd_area-sqft </output>
+	</switch>
+	
+
+	<!-- #### tail #### -->	
+
+	<fcs_function name="T4T/aero/v-stab/Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>				
+				<property>T4T/structure/v-stab/area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/v-stab/Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/v-stab EQ 0
+		</test>
+		<output> T4T/aero/v-stab/Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/h-stab_left/Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/left_sweep</property>				
+				<property>T4T/structure/h-stab/area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/h-stab_left/Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/h-stab_left EQ 0
+		</test>
+		<output> T4T/aero/h-stab_left/Cd_area-sqft </output>
+	</switch>
+	
+	<fcs_function name="T4T/aero/h-stab_right/Cd_area-sqft">
+		<function>	
+			<product>
+				<property>T4T/metrics/drag_efficiency</property>
+				<property>T4T/aero/right_sweep</property>				
+				<property>T4T/structure/h-stab/area-sqft</property>
+			</product>
+		</function>
+	</fcs_function>
+	<switch>
+		<default value="T4T/aero/h-stab_right/Cd_area-sqft"/>
+		<test value="0">
+			T4T/damage/h-stab_right EQ 0
+		</test>
+		<output> T4T/aero/h-stab_right/Cd_area-sqft </output>
+	</switch>
+
+	</channel>
+	
+
+
+</system>

@@ -1,0 +1,1616 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2016 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+This work is licensed under the 
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
+To view a copy of this license, 
+visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or 
+send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+Attribution,  You must give appropriate credit, provide a link to the license, 
+and indicate if changes were made. You may do so in any reasonable manner, 
+but not in any way that suggests the licensor endorses you or your use.
+
+NonCommercial,  You may not use the material for commercial purposes.
+
+ShareAlike,  If you remix, transform, or build upon the material, 
+you must distribute your contributions under the same license as the original. 
+
+**************************************************************************
+-->
+
+<system name="angle_of_attack">
+
+<property type="bool" value="0"> T4T/velocities/w-gf_left-aero-fps</property>
+<property type="bool" value="0"> T4T/velocities/w-gf_right-aero-fps</property>
+
+	<channel name="p_rotation">
+
+    <pure_gain name="T4T/velocities/wing/_1_p_rotational-fps">	
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_1_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_2_p_rotational-fps">	
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_2_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_3_p_rotational-fps">	
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_3_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_4_p_rotational-fps">	
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_4_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_5_p_rotational-fps">	
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_5_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_6_p_rotational-fps">	
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_6_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_7_p_rotational-fps">	
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_7_y</gain>
+    </pure_gain>
+	
+    <pure_gain name="T4T/velocities/wing/_8_p_rotational-fps">	
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_8_y</gain>
+    </pure_gain>
+	
+    <pure_gain name="T4T/velocities/v-stab/p_rotational-fps">
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/v-stab/z</gain>
+    </pure_gain>
+	
+	<pure_gain name="T4T/velocities/h-stab/p_rotational-fps">
+		<input>velocities/p-aero-rad_sec</input>
+		<gain>T4T/structure/h-stab/y</gain>
+    </pure_gain>
+	
+	</channel>	
+
+	<channel name="q_rotation">
+
+    <pure_gain name="T4T/velocities/wing/_1_q_rotational-fps">	
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_1_x</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_2_q_rotational-fps">	
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_2_x</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_3_q_rotational-fps">	
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_3_x</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_4_q_rotational-fps">	
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_4_x</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_5_q_rotational-fps">	
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_5_x</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_6_q_rotational-fps">	
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_6_x</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_7_q_rotational-fps">	
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_7_x</gain>
+    </pure_gain>
+	
+    <pure_gain name="T4T/velocities/wing/_8_q_rotational-fps">	
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_8_x</gain>
+    </pure_gain>
+	
+	<pure_gain name="T4T/velocities/v-stab/q_rotational-fps">
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/v-stab/x</gain>
+    </pure_gain>
+	
+	<pure_gain name="T4T/velocities/h-stab/q_rotational-fps">
+		<input>velocities/q-aero-rad_sec</input>
+		<gain>T4T/structure/h-stab/x</gain>
+    </pure_gain>
+	
+	</channel>	
+
+	<channel name="r_rotation">
+
+    <pure_gain name="T4T/velocities/wing/_1_r_rotational-fps">	
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_1_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_2_r_rotational-fps">	
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_2_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_3_r_rotational-fps">	
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_3_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_4_r_rotational-fps">	
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_4_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_5_r_rotational-fps">	
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_5_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_6_r_rotational-fps">	
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_6_y</gain>
+    </pure_gain>
+
+    <pure_gain name="T4T/velocities/wing/_7_r_rotational-fps">	
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_7_y</gain>
+    </pure_gain>
+	
+    <pure_gain name="T4T/velocities/wing/_8_r_rotational-fps">	
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/wing/_8_y</gain>
+    </pure_gain>
+	
+	<pure_gain name="T4T/velocities/v-stab/r_rotational-fps">
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/v-stab/x</gain>
+    </pure_gain>
+	
+	<pure_gain name="T4T/velocities/h-stab/r_rotational-fps">
+		<input>velocities/r-aero-rad_sec</input>
+		<gain>T4T/structure/h-stab/x</gain>
+    </pure_gain>
+	
+	</channel>
+	
+	<channel name="true velocity">
+	
+	<!-- #### velocities-fps #### -->
+	
+	<summer name="T4T/velocities/fuselage/u-aero-fps">
+		<input>velocities/u-aero-fps</input>	
+		<input>propulsion/engine/prop-induced-velocity_fps</input>
+	</summer>
+	
+	<!-- #### wings #### -->
+	
+	<!-- #### left wing #### -->
+	
+	<summer name="T4T/velocities/wing_left/_1_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>T4T/velocities/wing/_1_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_left/_1_w-aero-fps">
+		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>-T4T/velocities/wing/_1_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_1_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_left/_1_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_left/_1_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_left/_1_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_1_alpha-rad">
+		<function>
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_left/_1_w-aero-fps</property>
+					<property>T4T/velocities/wing_left/_1_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>			
+	<fcs_function name="T4T/aero/wing_left/_1_beta-rad">
+		<function>
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_left/_1_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_left/_1_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_left/_1_beta-rad</property></sin>
+				<property>T4T/structure/wing/_1_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_left/_1_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_1_incidence-rad</property>
+				<cos><property>T4T/aero/wing_left/_1_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_left/_1_AoA-rad">
+		<input>-T4T/aero/wing_left/_1_dihedral-rad</input>
+		<input>T4T/aero/wing_left/_1_incidence-rad</input>
+		<input>T4T/aero/wing_left/_1_alpha-rad</input>		
+	</summer>
+	
+	
+	<summer name="T4T/velocities/wing_left/_2_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>T4T/velocities/wing/_2_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_left/_2_w-aero-fps">
+		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>-T4T/velocities/wing/_2_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_2_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_left/_2_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_left/_2_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_left/_2_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/aero/wing_left/_2_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_left/_2_w-aero-fps</property>
+					<property>T4T/velocities/wing_left/_2_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_2_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_left/_2_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_2_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_left/_2_beta-rad</property></sin>
+				<property>T4T/structure/wing/_2_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_left/_2_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_2_incidence-rad</property>
+				<cos><property>T4T/aero/wing_left/_2_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_left/_2_AoA-rad">
+		<input>-T4T/aero/wing_left/_2_dihedral-rad</input>
+		<input>T4T/aero/wing_left/_2_incidence-rad</input>
+		<input>T4T/aero/wing_left/_2_alpha-rad</input>		
+	</summer>	
+
+	<summer name="T4T/velocities/wing_left/_3_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>T4T/velocities/wing/_3_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_left/_3_w-aero-fps">
+		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>-T4T/velocities/wing/_3_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_3_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_left/_3_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_left/_3_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_left/_3_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/aero/wing_left/_3_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_left/_3_w-aero-fps</property>
+					<property>T4T/velocities/wing_left/_3_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_3_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_left/_3_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_3_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_left/_3_beta-rad</property></sin>
+				<property>T4T/structure/wing/_3_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_left/_3_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_3_incidence-rad</property>
+				<cos><property>T4T/aero/wing_left/_3_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_left/_3_AoA-rad">
+		<input>-T4T/aero/wing_left/_3_dihedral-rad</input>
+		<input>T4T/aero/wing_left/_3_incidence-rad</input>
+		<input>T4T/aero/wing_left/_3_alpha-rad</input>		
+	</summer>
+
+	<summer name="T4T/velocities/wing_left/_4_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>T4T/velocities/wing/_4_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_left/_4_w-aero-fps">
+		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>-T4T/velocities/wing/_4_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_4_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_left/_4_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_left/_4_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_left/_4_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/aero/wing_left/_4_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_left/_4_w-aero-fps</property>
+					<property>T4T/velocities/wing_left/_4_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_4_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_left/_4_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_4_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_left/_4_beta-rad</property></sin>
+				<property>T4T/structure/wing/_4_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_left/_4_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_4_incidence-rad</property>
+				<cos><property>T4T/aero/wing_left/_4_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_left/_4_AoA-rad">
+		<input>-T4T/aero/wing_left/_4_dihedral-rad</input>
+		<input>T4T/aero/wing_left/_4_incidence-rad</input>
+		<input>T4T/aero/wing_left/_4_alpha-rad</input>		
+	</summer>	
+
+	<summer name="T4T/velocities/wing_left/_5_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>T4T/velocities/wing/_5_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_left/_5_w-aero-fps">
+		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>-T4T/velocities/wing/_5_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_5_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_left/_5_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_left/_5_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_left/_5_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/aero/wing_left/_5_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_left/_5_w-aero-fps</property>
+					<property>T4T/velocities/wing_left/_5_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_5_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_left/_5_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_5_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_left/_5_beta-rad</property></sin>
+				<property>T4T/structure/wing/_5_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_left/_5_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_5_incidence-rad</property>
+				<cos><property>T4T/aero/wing_left/_5_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_left/_5_AoA-rad">
+		<input>-T4T/aero/wing_left/_5_dihedral-rad</input>
+		<input>T4T/aero/wing_left/_5_incidence-rad</input>
+		<input>T4T/aero/wing_left/_5_alpha-rad</input>		
+	</summer>
+
+	<summer name="T4T/velocities/wing_left/_6_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>T4T/velocities/wing/_6_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_left/_6_w-aero-fps">
+		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>-T4T/velocities/wing/_6_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_6_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_left/_6_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_left/_6_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_left/_6_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/aero/wing_left/_6_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_left/_6_w-aero-fps</property>
+					<property>T4T/velocities/wing_left/_6_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_6_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_left/_6_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_6_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_left/_6_beta-rad</property></sin>
+				<property>T4T/structure/wing/_6_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_left/_6_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_6_incidence-rad</property>
+				<cos><property>T4T/aero/wing_left/_6_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_left/_6_AoA-rad">
+		<input>-T4T/aero/wing_left/_6_dihedral-rad</input>
+		<input>T4T/aero/wing_left/_6_incidence-rad</input>
+		<input>T4T/aero/wing_left/_6_alpha-rad</input>		
+	</summer>	
+
+	<summer name="T4T/velocities/wing_left/_7_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>T4T/velocities/wing/_7_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_left/_7_w-aero-fps">
+		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>-T4T/velocities/wing/_7_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_7_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_left/_7_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_left/_7_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_left/_7_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/aero/wing_left/_7_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_left/_7_w-aero-fps</property>
+					<property>T4T/velocities/wing_left/_7_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_7_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_left/_7_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_7_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_left/_7_beta-rad</property></sin>
+				<property>T4T/structure/wing/_7_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_left/_7_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_7_incidence-rad</property>
+				<cos><property>T4T/aero/wing_left/_7_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_left/_7_AoA-rad">
+		<input>-T4T/aero/wing_left/_7_dihedral-rad</input>
+		<input>T4T/aero/wing_left/_7_incidence-rad</input>
+		<input>T4T/aero/wing_left/_7_alpha-rad</input>		
+	</summer>	
+
+	<summer name="T4T/velocities/wing_left/_8_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>T4T/velocities/wing/_8_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_left/_8_w-aero-fps">
+		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>-T4T/velocities/wing/_8_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_8_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_left/_8_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_left/_8_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_left/_8_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	
+	<fcs_function name="T4T/aero/wing_left/_8_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_left/_8_w-aero-fps</property>
+					<property>T4T/velocities/wing_left/_8_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_8_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_left/_8_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_left/_8_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_left/_8_beta-rad</property></sin>
+				<property>T4T/structure/wing/_8_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_left/_8_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_8_incidence-rad</property>
+				<cos><property>T4T/aero/wing_left/_8_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_left/_8_AoA-rad">
+		<input>-T4T/aero/wing_left/_8_dihedral-rad</input>
+		<input>T4T/aero/wing_left/_8_incidence-rad</input>
+		<input>T4T/aero/wing_left/_8_alpha-rad</input>		
+	</summer>	
+	
+	<!-- #### right wing #### -->
+	
+	<summer name="T4T/velocities/wing_right/_1_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>-T4T/velocities/wing/_1_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_right/_1_w-aero-fps">
+		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>T4T/velocities/wing/_1_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_1_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_right/_1_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_right/_1_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_right/_1_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_1_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_right/_1_w-aero-fps</property>
+					<property>T4T/velocities/wing_right/_1_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_right/_1_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_right/_1_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_1_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_right/_1_beta-rad</property></sin>
+				<property>T4T/structure/wing/_1_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_1_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_1_incidence-rad</property>
+				<cos><property>T4T/aero/wing_right/_1_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_right/_1_AoA-rad">
+		<input>T4T/aero/wing_right/_1_dihedral-rad</input>
+		<input>T4T/aero/wing_right/_1_incidence-rad</input>
+		<input>T4T/aero/wing_right/_1_alpha-rad</input>		
+	</summer>	
+	
+	<summer name="T4T/velocities/wing_right/_2_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>-T4T/velocities/wing/_2_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_right/_2_w-aero-fps">
+		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>T4T/velocities/wing/_2_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_2_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_right/_2_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_right/_2_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_right/_2_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_2_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_right/_2_w-aero-fps</property>
+					<property>T4T/velocities/wing_right/_2_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_right/_2_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_right/_2_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_2_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_right/_2_beta-rad</property></sin>
+				<property>T4T/structure/wing/_2_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_2_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_2_incidence-rad</property>
+				<cos><property>T4T/aero/wing_right/_2_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_right/_2_AoA-rad">
+		<input>T4T/aero/wing_right/_2_dihedral-rad</input>
+		<input>T4T/aero/wing_right/_2_incidence-rad</input>
+		<input>T4T/aero/wing_right/_2_alpha-rad</input>		
+	</summer>	
+
+	<summer name="T4T/velocities/wing_right/_3_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>-T4T/velocities/wing/_3_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_right/_3_w-aero-fps">
+		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>T4T/velocities/wing/_3_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_3_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_right/_3_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_right/_3_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_right/_3_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_3_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_right/_3_w-aero-fps</property>
+					<property>T4T/velocities/wing_right/_3_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_right/_3_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_right/_3_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_3_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_right/_3_beta-rad</property></sin>
+				<property>T4T/structure/wing/_3_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_3_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_3_incidence-rad</property>
+				<cos><property>T4T/aero/wing_right/_3_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_right/_3_AoA-rad">
+		<input>T4T/aero/wing_right/_3_dihedral-rad</input>
+		<input>T4T/aero/wing_right/_3_incidence-rad</input>
+		<input>T4T/aero/wing_right/_3_alpha-rad</input>		
+	</summer>	
+	
+	<summer name="T4T/velocities/wing_right/_4_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>-T4T/velocities/wing/_4_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_right/_4_w-aero-fps">
+		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>T4T/velocities/wing/_4_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_4_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_right/_4_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_right/_4_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_right/_4_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_4_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_right/_4_w-aero-fps</property>
+					<property>T4T/velocities/wing_right/_4_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_right/_4_beta-rad">
+		<function>	
+			<atan2>		
+				<property>velocities/v-aero-fps</property>
+				<property>T4T/velocities/wing_right/_4_u-aero-fps</property>
+			</atan2>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_4_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_right/_4_beta-rad</property></sin>
+				<property>T4T/structure/wing/_4_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_4_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_4_incidence-rad</property>
+				<cos><property>T4T/aero/wing_right/_4_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_right/_4_AoA-rad">
+		<input>T4T/aero/wing_right/_4_dihedral-rad</input>
+		<input>T4T/aero/wing_right/_4_incidence-rad</input>
+		<input>T4T/aero/wing_right/_4_alpha-rad</input>		
+	</summer>	
+	
+	<summer name="T4T/velocities/wing_right/_5_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>-T4T/velocities/wing/_5_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_right/_5_w-aero-fps">
+		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>T4T/velocities/wing/_5_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_5_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_right/_5_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_right/_5_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_right/_5_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_5_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_right/_5_w-aero-fps</property>
+					<property>T4T/velocities/wing_right/_5_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_right/_5_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_right/_5_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_5_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_right/_5_beta-rad</property></sin>
+				<property>T4T/structure/wing/_5_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_5_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_5_incidence-rad</property>
+				<cos><property>T4T/aero/wing_right/_5_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_right/_5_AoA-rad">
+		<input>T4T/aero/wing_right/_5_dihedral-rad</input>
+		<input>T4T/aero/wing_right/_5_incidence-rad</input>
+		<input>T4T/aero/wing_right/_5_alpha-rad</input>		
+	</summer>
+	
+	<summer name="T4T/velocities/wing_right/_6_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>-T4T/velocities/wing/_6_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_right/_6_w-aero-fps">
+		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>T4T/velocities/wing/_6_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_6_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_right/_6_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_right/_6_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_right/_6_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_6_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_right/_6_w-aero-fps</property>
+					<property>T4T/velocities/wing_right/_6_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_right/_6_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_right/_6_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_6_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_right/_6_beta-rad</property></sin>
+				<property>T4T/structure/wing/_6_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_6_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_6_incidence-rad</property>
+				<cos><property>T4T/aero/wing_right/_6_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_right/_6_AoA-rad">
+		<input>T4T/aero/wing_right/_6_dihedral-rad</input>
+		<input>T4T/aero/wing_right/_6_incidence-rad</input>
+		<input>T4T/aero/wing_right/_6_alpha-rad</input>		
+	</summer>	
+	
+	<summer name="T4T/velocities/wing_right/_7_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>-T4T/velocities/wing/_7_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_right/_7_w-aero-fps">
+		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>T4T/velocities/wing/_7_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_7_q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/wing_right/_7_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_right/_7_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_right/_7_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_7_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_right/_7_w-aero-fps</property>
+					<property>T4T/velocities/wing_right/_7_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_right/_7_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_right/_7_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_7_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_right/_7_beta-rad</property></sin>
+				<property>T4T/structure/wing/_7_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_7_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_7_incidence-rad</property>
+				<cos><property>T4T/aero/wing_right/_7_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_right/_7_AoA-rad">
+		<input>T4T/aero/wing_right/_7_dihedral-rad</input>
+		<input>T4T/aero/wing_right/_7_incidence-rad</input>
+		<input>T4T/aero/wing_right/_7_alpha-rad</input>		
+	</summer>	
+	
+	<summer name="T4T/velocities/wing_right/_8_u-aero-fps">
+		<input>T4T/velocities/fuselage/u-aero-fps</input>
+		<input>-T4T/velocities/wing/_8_r_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/wing_right/_8_w-aero-fps">
+		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>velocities/w-aero-fps</input>		
+		<input>T4T/velocities/wing/_8_p_rotational-fps</input>
+		<input>T4T/velocities/wing/_8_q_rotational-fps</input>
+	</summer>	
+	<fcs_function name="T4T/velocities/wing_right/_8_true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/wing_right/_8_u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>velocities/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/wing_right/_8_w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_8_alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/wing_right/_8_w-aero-fps</property>
+					<property>T4T/velocities/wing_right/_8_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/wing_right/_8_beta-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>velocities/v-aero-fps</property>
+					<property>T4T/velocities/wing_right/_8_true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_8_dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/wing_right/_8_beta-rad</property></sin>
+				<property>T4T/structure/wing/_8_dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/wing_right/_8_incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/wing/_8_incidence-rad</property>
+				<cos><property>T4T/aero/wing_right/_8_beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/wing_right/_8_AoA-rad">
+		<input>T4T/aero/wing_right/_8_dihedral-rad</input>
+		<input>T4T/aero/wing_right/_8_incidence-rad</input>
+		<input>T4T/aero/wing_right/_8_alpha-rad</input>		
+	</summer>	
+	
+	<!-- #### v-stab #### -->
+
+	<summer name="T4T/velocities/v-stab/v-aero-fps">
+		<input>velocities/v-aero-fps</input>
+		<input>-T4T/velocities/v-stab/r_rotational-fps</input>
+		<input>T4T/velocities/v-stab/p_rotational-fps</input>
+	</summer>
+	<summer name="T4T/velocities/v-stab/w-aero-fps">
+		<input>velocities/w-aero-fps</input>
+		<input>T4T/velocities/v-stab/q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/v-stab/true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/fuselage/u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/v-stab/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/v-stab/w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/v-stab/alpha-rad">
+		<function>
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/v-stab/w-aero-fps</property>
+					<property>T4T/velocities/v-stab/true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>	
+	<fcs_function name="T4T/aero/v-stab/beta-rad">
+		<function>
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/v-stab/v-aero-fps</property>
+					<property>T4T/velocities/v-stab/true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/v-stab/incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/v-stab/incidence-rad</property>
+				<cos><property>T4T/aero/v-stab/beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/v-stab/AoA-rad">
+		<input>T4T/aero/v-stab/incidence-rad</input>
+		<input>T4T/aero/v-stab/beta-rad</input>		
+	</summer>
+	
+	<!-- #### h-stabs #### -->
+	
+	<fcs_function name="T4T/velocities/wing_left/downwash-aero-fps">
+		<function>
+			<product>
+				<table>
+					<independentVar>aero/alpha-deg</independentVar>
+					<tableData>
+						-31		0 
+						14		1 <!-- This is the angle between back of wing and front of h-stab -->
+						59		0
+					</tableData>
+				</table>
+				<quotient>
+					<property>T4T/coefficients/wing_left/Cdi</property>
+					<property>T4T/coefficients/wing_left/Cl</property>
+				</quotient>
+				<property>T4T/velocities/fuselage/u-aero-fps</property>					
+			</product>
+		</function>
+	</fcs_function>
+
+	<fcs_function name="T4T/velocities/wing_right/downwash-aero-fps">
+		<function>
+			<product>
+				<table>
+					<independentVar>aero/alpha-deg</independentVar>
+					<tableData>
+						-31		0 
+						14		1 <!-- This is the angle between back of wing and front of h-stab -->
+						59		0
+					</tableData>
+				</table>
+				<quotient>
+					<property>T4T/coefficients/wing_right/Cdi</property>
+					<property>T4T/coefficients/wing_right/Cl</property>
+				</quotient>
+				<property>T4T/velocities/fuselage/u-aero-fps</property>					
+			</product>
+		</function>
+	</fcs_function>	
+
+	<!-- #### left h-stab #### -->
+		
+	<summer name="T4T/velocities/h-stab/v-aero-fps">
+		<input>velocities/v-aero-fps</input>
+		<input>-T4T/velocities/h-stab/r_rotational-fps</input>
+	</summer>	
+	<summer name="T4T/velocities/h-stab_left/w-aero-fps">
+		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>-T4T/velocities/wing_left/downwash-aero-fps</input>	
+		<input>velocities/w-aero-fps</input>
+		<input>T4T/velocities/h-stab/p_rotational-fps</input>
+		<input>T4T/velocities/h-stab/q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/h-stab_left/true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/fuselage/u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/h-stab/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/h-stab_left/w-aero-fps</property>
+						<value> 2 </value>
+					</pow>					
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/h-stab_left/alpha-rad">
+		<function>
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/h-stab_left/w-aero-fps</property>
+					<property>T4T/velocities/h-stab_left/true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/h-stab/beta-rad">
+		<function>
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/h-stab/v-aero-fps</property>
+					<property>T4T/velocities/h-stab_left/true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/h-stab/dihedral-rad">
+		<function>	
+			<product>		
+				<sin><property>T4T/aero/h-stab/beta-rad</property></sin>
+				<property>T4T/structure/h-stab/dihedral-rad</property>
+			</product>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/h-stab/incidence-rad">
+		<function>
+			<product>
+				<property>T4T/structure/h-stab/incidence-rad</property>
+				<cos><property>T4T/aero/h-stab/beta-rad</property></cos>
+			</product>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/h-stab_left/AoA-rad">
+		<input>-T4T/aero/h-stab/dihedral-rad</input>
+		<input>T4T/aero/h-stab/incidence-rad</input>
+		<input>T4T/aero/h-stab_left/alpha-rad</input>		
+	</summer>	
+	<!-- #### right h-stab #### -->	
+	
+	<summer name="T4T/velocities/h-stab_right/w-aero-fps">
+		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>-T4T/velocities/wing_right/downwash-aero-fps</input>		
+		<input>velocities/w-aero-fps</input>
+		<input>T4T/velocities/h-stab/p_rotational-fps</input>
+		<input>T4T/velocities/h-stab/q_rotational-fps</input>
+	</summer>
+	<fcs_function name="T4T/velocities/h-stab_right/true-fps">
+		<function>
+			<pow>
+				<sum>
+					<pow>
+						<property>T4T/velocities/fuselage/u-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/h-stab/v-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+					<pow>
+						<property>T4T/velocities/h-stab_right/w-aero-fps</property>
+						<value> 2 </value>
+					</pow>
+				</sum>
+				<value> 0.5 </value>
+			</pow>
+		</function>
+	</fcs_function>
+	<fcs_function name="T4T/aero/h-stab_right/alpha-rad">
+		<function>	
+			<asin>
+				<quotient>		
+					<property>T4T/velocities/h-stab_right/w-aero-fps</property>
+					<property>T4T/velocities/h-stab_right/true-fps</property>
+				</quotient>
+			</asin>
+		</function>
+	</fcs_function>
+	<summer name="T4T/aero/h-stab_right/AoA-rad">
+		<input>T4T/aero/h-stab/dihedral-rad</input>
+		<input>T4T/aero/h-stab/incidence-rad</input>
+		<input>T4T/aero/h-stab_right/alpha-rad</input>		
+	</summer>
+	
+	</channel>
+	
+
+
+
+</system>
