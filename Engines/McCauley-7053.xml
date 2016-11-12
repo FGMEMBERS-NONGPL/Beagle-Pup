@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<!--
+**************************************************************************
+
+Copyright (c) 2016 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+This work is licensed under the 
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
+To view a copy of this license, 
+visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or 
+send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+Attribution,  You must give appropriate credit, provide a link to the license, 
+and indicate if changes were made. You may do so in any reasonable manner, 
+but not in any way that suggests the licensor endorses you or your use.
+
+NonCommercial,  You may not use the material for commercial purposes.
+
+ShareAlike,  If you remix, transform, or build upon the material, 
+you must distribute your contributions under the same license as the original. 
+
+**************************************************************************
+
+
+Based on tables from JavaProp.
+
+
+ -->
+
+<propeller name="McCauley 1A105-SCM 7053, 70inch 2-blade aluminum prop. (Fixed pitch)">
+
+	
+	<ixx unit="SLUG*FT2"> 3.02 </ixx>
+	
+	<!-- 
+	Prop Characteristics
+	-->
+
+	<diameter unit="IN">  70 </diameter>
+	<numblades> 2 </numblades>
+ 	<constspeed> 0 </constspeed>
+	
+	<!-- 
+	<gearratio> is the gearing between the prop and the engine,
+	Normally it's defined from the engine to the propeller and is a value below zero
+	ie 0.78
+	To specify from the propeller to the engine use 1/X = gearration = 1/0.78 = 1.28
+	--> 
+  
+
+	<gearratio>  1.0 </gearratio>
+  
+  
+	<!-- 
+	<ct_factor> is the props co-efficent of thrust 'tuning' factor
+	<cp_factor> is the props co-efficent of power 'tuning' factor
+	-->
+	<ct_factor> 1.0 </ct_factor> <!-- this value to give top speed at sea level aprox 113kts	-->
+	<cp_factor> 1.0 </cp_factor> <!-- this value increases the prop revs to the minimum value of aprox 2391rpm	0.865 -->
+  
+
+	<table name="C_THRUST" type="internal">
+		<tableData>
+		0.00	0.11212
+		0.05	0.10458
+		0.10	0.11310
+		0.15	0.11150
+		0.20	0.10929
+		0.25	0.10634
+		0.30	0.10259
+		0.35	0.09783
+		0.40	0.09239
+		0.45	0.08623
+		0.50	0.07918
+		0.55	0.07179
+		0.60	0.06419
+		0.65	0.05647
+		0.70	0.04853
+		0.75	0.04040
+		0.80	0.03209
+		0.85	0.02361
+		0.90	0.01498
+		0.95	0.00621
+		1.00	-0.00102
+		1.05	-0.00980
+		1.10	-0.01857
+		1.15	-0.02721
+		1.20	-0.03568
+		1.25	-0.04399
+		1.30	-0.05213
+		1.35	-0.06007
+		1.40	-0.06778
+		1.45	-0.07517
+		1.50	-0.08222
+		1.55	-0.08838
+		1.60	-0.09314
+		1.65	-0.09689
+		1.70	-0.09984
+		</tableData>
+	</table>
+
+
+	<table name="C_POWER" type="internal">
+		<tableData>
+		0.00	0.05460
+		0.05	0.05778
+		0.10	0.05425
+		0.15	0.05504
+		0.20	0.05578
+		0.25	0.05664
+		0.30	0.05725
+		0.35	0.05735
+		0.40	0.05699
+		0.45	0.05606
+		0.50	0.05426
+		0.55	0.05187
+		0.60	0.04889
+		0.65	0.04535
+		0.70	0.04115
+		0.75	0.03629
+		0.80	0.03073
+		0.85	0.02444
+		0.90	0.01741
+		0.95	0.00962
+		1.00	0.00272
+		1.05	-0.00507
+		1.10	-0.01287
+		1.15	-0.01990
+		1.20	-0.02618
+		1.25	-0.03175
+		1.30	-0.03661
+		1.35	-0.04080
+		1.40	-0.04435
+		1.45	-0.04674
+		1.50	-0.04854
+		1.55	-0.04947
+		1.60	-0.04938
+		1.65	-0.04876
+		1.70	-0.04791
+		</tableData>
+	</table>
+
+	<!-- thrust effects of helical tip Mach -->
+	<table name="CT_MACH" type="internal">
+		<tableData>
+			0.85   1.0
+			1.05   0.8
+		</tableData>
+	</table>
+
+	<!-- power-required effects of helical tip Mach -->
+	<table name="CP_MACH" type="internal">
+		<tableData>
+			0.85   1.0
+			1.05   1.8
+		</tableData>
+	</table>
+
+</propeller>

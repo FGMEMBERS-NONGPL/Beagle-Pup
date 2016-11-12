@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+ 
+  <!--
+**************************************************************************
+
+Copyright (c) 2016 Simon 'bomber' Morley
+simonbomber64 at googlemail.com
+
+This work is licensed under the 
+Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License. 
+To view a copy of this license, 
+visit http://creativecommons.org/licenses/by-nc-sa/3.0/ or 
+send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+Attribution,  You must give appropriate credit, provide a link to the license, 
+and indicate if changes were made. You may do so in any reasonable manner, 
+but not in any way that suggests the licensor endorses you or your use.
+
+NonCommercial,  You may not use the material for commercial purposes.
+
+ShareAlike,  If you remix, transform, or build upon the material, 
+you must distribute your contributions under the same license as the original. 
+
+**************************************************************************
+
+CONTINENTAL MOTORS 200 GASOLINE ENGINE 
+______________________________________
+General characteristics
+	Type: 4-cylinder air-cooled horizontally opposed aircraft piston engine
+	Bore: 4.0625 in (103.2 mm)
+	Stroke: 3.875 in (98.4 mm)
+	Displacement: 200.91 in (3.29 L)
+	Length: 28.53 in (72.47 cm)
+	Width: 31.5 in (80.0 cm)
+	Height: 23.25 in (59.0 cm)
+	Dry weight: 170 lbs (77.19 kg) dry, without starter or generator
+Components
+	Cooling system: Air-cooled
+Performance
+	Power output: 100 hp (75 kW) at 2,750 rpm
+	Specific power: 0.5 hp/in (23 kW/l)
+	Compression ratio: 7.0:1
+	Power-to-weight ratio: 0.56 hp/lb (0.92 kW/kg)
+	
+-->
+
+
+<piston_engine name="Continental_O-200">
+    <displacement unit="IN3"> 200.91 </displacement> 
+			<!-- this value is used to determine mass air and fuel flow which impacts engine power and cooling. -->
+    <bore unit="IN"> 4.0625  </bore>
+			<!-- cylinder bore is currently unused. -->
+    <stroke unit="IN"> 3.875 </stroke>
+			<!-- piston stroke is used to determine the mean piston speed. 
+			A longer stroke results in an engine that does not work as well at higher speeds -->
+    <cylinders> 4 </cylinders>
+			<!-- number of cylinders scales the cylinder head mass. -->
+	<compression-ratio> 7.0 </compression-ratio>
+			<!-- the compression ratio affects the change in volumetric efficiency with altitude.-->    
+	<maxhp> 100 </maxhp>
+			<!-- this value is the nominal power the engine creates at maxrpm.
+			It will determine bsfc if that tag is not input. It also determines the starter motor power. -->   
+	<cycles> 4 </cycles>
+			<!-- Designate a 2 or 4 stroke engine. Currently only the 4 stroke engine is supported. -->
+    <idlerpm> 800.0 </idlerpm>
+			<!-- this value affects the throttle fall off and the engine stops running
+			if it is slowed below 80% of this value. The engine starts running when it reaches 80% of this value. -->
+    <maxrpm> 2750.0 </maxrpm>
+			<!-- this value is used to calculate air-box resistance and BSFC.
+			It also affects oil pressure among other things. -->
+	<starter-torque> 150 </starter-torque>
+				
+
+		<!-- AIR INTAKE -->
+		
+	<ram-air-factor> 0 </ram-air-factor>
+			<!-- this number creates a pressure increase with an increase in dynamic pressure (aircraft speed). 
+				is the efficiency of the air scoop intake. 0 turns ram air off. Default is 1. -->
+	<air-intake-impedance-factor> 0.05 </air-intake-impedance-factor>
+			<!-- this number is the pressure drop across the intake system. Increasing it reduces available manifold pressure.
+				It is determined by <maxmp> if not supplied. -->
+	
+		<!-- THROTTLE -->		
+		
+    <maxmp unit="INHG"> 28.8 </maxmp>
+			<!-- this value is the nominal maximum manifold pressure at sea-level without boost.
+			Along with maxrpm it determines the resistance of the aircraft's intake system. 
+			See air-intake-impedance-factor 
+
+			It is used for determining <BSFC> and <air-intake-impedance-factor> if a values are not supplied
+			for those items. In a supercharged engine is always the pressure at sea level under standard 
+			conditions (29.9). -->
+
+	<minmp unit="INHG"> 11.7 </minmp>
+			<!-- this value is the nominal idle manifold pressure at sea-level without boost. 
+			Along with idlerpm, it determines the throttle response slope. -->
+
+		<!-- POWER PRODUCTION -->
+
+	<sparkfaildrop> 0.1 </sparkfaildrop>
+			<!-- this is the percentage drop in horsepower for single magneto operation, try a value of 0.8 or so. -->	
+    <volumetric-efficiency> 0.65 </volumetric-efficiency>
+			<!-- controls how much mixture goes through the engine at sea level running at the rated RPM.
+			Value of 1 for unboosted engines and values over 1 for boosted engines. -->
+	<bsfc unit="LBS/HP*HR"> 0.271 </bsfc>
+			<!-- Indicated Specific Fuel Consumption.
+			The power produced per unit of fuel. Higher numbers give worse fuel economy.
+			This number may need to be lowered slightly from actual BSFC numbers because some internal engine losses
+			are modeled separately. --> 
+
+		<!-- COOLING -->
+
+    <cylinder-head-mass unit="LBS"> 9.25 </cylinder-head-mass>
+			<!-- the nominal mass of a cylinder head. A larger value slows changes in engine temperature.
+			So if you have a '5-minute' limit on a power setting you can adjust this
+			value so the engine just starts to overheat at the end of the given time frame.-->
+	<cooling-factor> 0.36 </cooling-factor>
+			<!-- this number models how efficient the aircraft cooling system is. Raising the value makes
+			the engine run cooler. This value is exposed on the property tree so it may be
+			altered at runtime to simulate cowl flaps, for example. -->
+    
+</piston_engine>
