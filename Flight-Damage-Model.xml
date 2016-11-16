@@ -911,19 +911,19 @@ you must distribute your contributions under the same license as the original.
 
     </mass_balance>
  
- 	<ground_reactions>
+    <ground_reactions>
         <contact type="BOGEY" name="nose">
             <location unit="FT">
                 <x> -0.98 </x>
                 <y> 0.0 </y>
-				<z> -4.146 </z>
-			</location>
-			<static_friction>  0.80 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
-            <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 1010 </spring_coeff> <!--  weight * 0.65 -->
-            <damping_coeff unit="LBS/FT/SEC"> 151.5 </damping_coeff> <!--  spring_coeff * 0.15 -->
-            <damping_coeff_rebound unit="LBS/FT/SEC"> 15.15 </damping_coeff_rebound> <!--  damping_coeff * 0.1 -->
+            <z> -4.146 </z>
+         </location>
+         <static_friction>  0.80 </static_friction> <!--  the smaller the number the easier the tire tread breaks from the road surface causing a SKID -->
+         <dynamic_friction> 0.5 </dynamic_friction> <!--  the smaller the number the easier to wheel spin  ? -->
+            <rolling_friction> 0.05 </rolling_friction> <!--  the larger the number the more thrust needed to INITIALY get the wheels rolling -->
+           <spring_coeff unit="LBS/FT"> 2400 </spring_coeff> <!--  weight * 1.5 -->
+            <damping_coeff unit="LBS/FT/SEC"> 360 </damping_coeff> <!--  spring_coeff * 0.15 -->
+            <damping_coeff_rebound unit="LBS/FT/SEC"> 36 </damping_coeff_rebound> <!--  damping_coeff * 0.1 -->
             <max_steer unit="DEG"> 2 </max_steer>
             <brake_group> NONE </brake_group>
             <retractable>0</retractable>
@@ -935,9 +935,9 @@ you must distribute your contributions under the same license as the original.
                 <y> -3.28 </y>
                 <z> -4.1 </z>
             </location>
-			<static_friction>  1.0 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
-            <rolling_friction> 0.02 </rolling_friction>
+         <static_friction>  0.8 </static_friction>
+         <dynamic_friction> 0.5 </dynamic_friction>
+            <rolling_friction> 0.05 </rolling_friction>
             <spring_coeff unit="LBS/FT"> 3265 </spring_coeff> <!--  weight * 2.1 -->
             <damping_coeff unit="LBS/FT/SEC"> 490 </damping_coeff> <!--  spring_coeff * 0.15 -->
             <damping_coeff_rebound unit="LBS/FT/SEC"> 49 </damping_coeff_rebound> <!--  damping_coeff * 0.1 -->
@@ -952,9 +952,9 @@ you must distribute your contributions under the same license as the original.
                 <y> 3.28 </y>
                 <z> -4.1 </z>
             </location>
-			<static_friction>  1.0 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
-            <rolling_friction> 0.02 </rolling_friction>
+         <static_friction>  0.8 </static_friction>
+         <dynamic_friction> 0.5 </dynamic_friction>
+            <rolling_friction> 0.05 </rolling_friction>
             <spring_coeff unit="LBS/FT"> 3265 </spring_coeff> <!--  weight * 2.1 -->
             <damping_coeff unit="LBS/FT/SEC"> 490 </damping_coeff> <!--  spring_coeff * 0.15 -->
             <damping_coeff_rebound unit="LBS/FT/SEC"> 49 </damping_coeff_rebound> <!--  damping_coeff * 0.1 -->
