@@ -924,7 +924,7 @@ you must distribute your contributions under the same license as the original.
            <spring_coeff unit="LBS/FT"> 2400 </spring_coeff> <!--  weight * 1.5 -->
             <damping_coeff unit="LBS/FT/SEC"> 360 </damping_coeff> <!--  spring_coeff * 0.15 -->
             <damping_coeff_rebound unit="LBS/FT/SEC"> 36 </damping_coeff_rebound> <!--  damping_coeff * 0.1 -->
-            <max_steer unit="DEG"> 2 </max_steer>
+            <max_steer unit="DEG"> 12.5 </max_steer>
             <brake_group> NONE </brake_group>
             <retractable>0</retractable>
         </contact>
