@@ -23,8 +23,6 @@ you must distribute your contributions under the same license as the original.
 
 **************************************************************************
 
-CONTINENTAL MOTORS 200 GASOLINE ENGINE 
-______________________________________
 General characteristics
 	Type: 4-cylinder air-cooled horizontally opposed aircraft piston engine
 	Bore: 4.0625 in (103.2 mm)
@@ -46,7 +44,7 @@ Performance
 
 
 <piston_engine name="Continental_O-200">
-    <displacement unit="IN3"> 200.91 </displacement> 
+    <displacement unit="IN3"> 201 </displacement> 
 			<!-- this value is used to determine mass air and fuel flow which impacts engine power and cooling. -->
     <bore unit="IN"> 4.0625  </bore>
 			<!-- cylinder bore is currently unused. -->
@@ -62,10 +60,10 @@ Performance
 			It will determine bsfc if that tag is not input. It also determines the starter motor power. -->   
 	<cycles> 4 </cycles>
 			<!-- Designate a 2 or 4 stroke engine. Currently only the 4 stroke engine is supported. -->
-    <idlerpm> 800.0 </idlerpm>
+    <idlerpm> 500 </idlerpm>
 			<!-- this value affects the throttle fall off and the engine stops running
 			if it is slowed below 80% of this value. The engine starts running when it reaches 80% of this value. -->
-    <maxrpm> 2750.0 </maxrpm>
+    <maxrpm> 2800 </maxrpm>
 			<!-- this value is used to calculate air-box resistance and BSFC.
 			It also affects oil pressure among other things. -->
 	<starter-torque> 150 </starter-torque>
@@ -76,7 +74,7 @@ Performance
 	<ram-air-factor> 0 </ram-air-factor>
 			<!-- this number creates a pressure increase with an increase in dynamic pressure (aircraft speed). 
 				is the efficiency of the air scoop intake. 0 turns ram air off. Default is 1. -->
-	<air-intake-impedance-factor> 0.05 </air-intake-impedance-factor>
+	<air-intake-impedance-factor> 0.1 </air-intake-impedance-factor>
 			<!-- this number is the pressure drop across the intake system. Increasing it reduces available manifold pressure.
 				It is determined by <maxmp> if not supplied. -->
 	
@@ -91,7 +89,7 @@ Performance
 			for those items. In a supercharged engine is always the pressure at sea level under standard 
 			conditions (29.9). -->
 
-	<minmp unit="INHG"> 11.7 </minmp>
+	<minmp unit="INHG"> 12.7 </minmp>
 			<!-- this value is the nominal idle manifold pressure at sea-level without boost. 
 			Along with idlerpm, it determines the throttle response slope. -->
 
@@ -99,10 +97,10 @@ Performance
 
 	<sparkfaildrop> 0.1 </sparkfaildrop>
 			<!-- this is the percentage drop in horsepower for single magneto operation, try a value of 0.8 or so. -->	
-    <volumetric-efficiency> 0.65 </volumetric-efficiency>
+    <volumetric-efficiency> 1.0 </volumetric-efficiency>
 			<!-- controls how much mixture goes through the engine at sea level running at the rated RPM.
 			Value of 1 for unboosted engines and values over 1 for boosted engines. -->
-	<bsfc unit="LBS/HP*HR"> 0.271 </bsfc>
+	<bsfc unit="LBS/HP*HR"> 0.399 </bsfc>
 			<!-- Indicated Specific Fuel Consumption.
 			The power produced per unit of fuel. Higher numbers give worse fuel economy.
 			This number may need to be lowered slightly from actual BSFC numbers because some internal engine losses

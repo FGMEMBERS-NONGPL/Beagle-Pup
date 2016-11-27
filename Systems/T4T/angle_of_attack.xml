@@ -26,58 +26,58 @@ you must distribute your contributions under the same license as the original.
 
 <system name="angle_of_attack">
 
-<property type="bool" value="0"> T4T/velocities/w-gf_left-aero-fps</property>
-<property type="bool" value="0"> T4T/velocities/w-gf_right-aero-fps</property>
+<property type="bool" value="0"> T4T/velocities/wing_left/groundeffect-fps</property>
+<property type="bool" value="0"> T4T/velocities/wing_right/groundeffect-fps</property>
 
 	<channel name="p_rotation">
 
     <pure_gain name="T4T/velocities/wing/_1_p_rotational-fps">	
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/wing/_1_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_2_p_rotational-fps">	
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/wing/_2_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_3_p_rotational-fps">	
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/wing/_3_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_4_p_rotational-fps">	
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/wing/_4_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_5_p_rotational-fps">	
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/wing/_5_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_6_p_rotational-fps">	
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/wing/_6_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_7_p_rotational-fps">	
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/wing/_7_y</gain>
     </pure_gain>
 	
     <pure_gain name="T4T/velocities/wing/_8_p_rotational-fps">	
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/wing/_8_y</gain>
     </pure_gain>
 	
     <pure_gain name="T4T/velocities/v-stab/p_rotational-fps">
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/v-stab/z</gain>
     </pure_gain>
 	
 	<pure_gain name="T4T/velocities/h-stab/p_rotational-fps">
-		<input>velocities/p-aero-rad_sec</input>
+		<input>velocities/p-rad_sec</input>
 		<gain>T4T/structure/h-stab/y</gain>
     </pure_gain>
 	
@@ -86,52 +86,52 @@ you must distribute your contributions under the same license as the original.
 	<channel name="q_rotation">
 
     <pure_gain name="T4T/velocities/wing/_1_q_rotational-fps">	
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/wing/_1_x</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_2_q_rotational-fps">	
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/wing/_2_x</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_3_q_rotational-fps">	
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/wing/_3_x</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_4_q_rotational-fps">	
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/wing/_4_x</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_5_q_rotational-fps">	
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/wing/_5_x</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_6_q_rotational-fps">	
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/wing/_6_x</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_7_q_rotational-fps">	
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/wing/_7_x</gain>
     </pure_gain>
 	
     <pure_gain name="T4T/velocities/wing/_8_q_rotational-fps">	
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/wing/_8_x</gain>
     </pure_gain>
 	
 	<pure_gain name="T4T/velocities/v-stab/q_rotational-fps">
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/v-stab/x</gain>
     </pure_gain>
 	
 	<pure_gain name="T4T/velocities/h-stab/q_rotational-fps">
-		<input>velocities/q-aero-rad_sec</input>
+		<input>velocities/q-rad_sec</input>
 		<gain>T4T/structure/h-stab/x</gain>
     </pure_gain>
 	
@@ -140,52 +140,52 @@ you must distribute your contributions under the same license as the original.
 	<channel name="r_rotation">
 
     <pure_gain name="T4T/velocities/wing/_1_r_rotational-fps">	
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/wing/_1_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_2_r_rotational-fps">	
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/wing/_2_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_3_r_rotational-fps">	
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/wing/_3_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_4_r_rotational-fps">	
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/wing/_4_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_5_r_rotational-fps">	
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/wing/_5_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_6_r_rotational-fps">	
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/wing/_6_y</gain>
     </pure_gain>
 
     <pure_gain name="T4T/velocities/wing/_7_r_rotational-fps">	
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/wing/_7_y</gain>
     </pure_gain>
 	
     <pure_gain name="T4T/velocities/wing/_8_r_rotational-fps">	
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/wing/_8_y</gain>
     </pure_gain>
 	
 	<pure_gain name="T4T/velocities/v-stab/r_rotational-fps">
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/v-stab/x</gain>
     </pure_gain>
 	
 	<pure_gain name="T4T/velocities/h-stab/r_rotational-fps">
-		<input>velocities/r-aero-rad_sec</input>
+		<input>velocities/r-rad_sec</input>
 		<gain>T4T/structure/h-stab/x</gain>
     </pure_gain>
 	
@@ -209,7 +209,7 @@ you must distribute your contributions under the same license as the original.
 		<input>T4T/velocities/wing/_1_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_left/_1_w-aero-fps">
-		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>T4T/velocities/wing_left/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>-T4T/velocities/wing/_1_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_1_q_rotational-fps</input>
@@ -283,7 +283,7 @@ you must distribute your contributions under the same license as the original.
 		<input>T4T/velocities/wing/_2_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_left/_2_w-aero-fps">
-		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>T4T/velocities/wing_left/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>-T4T/velocities/wing/_2_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_2_q_rotational-fps</input>
@@ -357,7 +357,7 @@ you must distribute your contributions under the same license as the original.
 		<input>T4T/velocities/wing/_3_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_left/_3_w-aero-fps">
-		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>T4T/velocities/wing_left/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>-T4T/velocities/wing/_3_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_3_q_rotational-fps</input>
@@ -431,7 +431,7 @@ you must distribute your contributions under the same license as the original.
 		<input>T4T/velocities/wing/_4_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_left/_4_w-aero-fps">
-		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>T4T/velocities/wing_left/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>-T4T/velocities/wing/_4_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_4_q_rotational-fps</input>
@@ -505,7 +505,7 @@ you must distribute your contributions under the same license as the original.
 		<input>T4T/velocities/wing/_5_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_left/_5_w-aero-fps">
-		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>T4T/velocities/wing_left/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>-T4T/velocities/wing/_5_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_5_q_rotational-fps</input>
@@ -579,7 +579,7 @@ you must distribute your contributions under the same license as the original.
 		<input>T4T/velocities/wing/_6_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_left/_6_w-aero-fps">
-		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>T4T/velocities/wing_left/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>-T4T/velocities/wing/_6_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_6_q_rotational-fps</input>
@@ -653,7 +653,7 @@ you must distribute your contributions under the same license as the original.
 		<input>T4T/velocities/wing/_7_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_left/_7_w-aero-fps">
-		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>T4T/velocities/wing_left/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>-T4T/velocities/wing/_7_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_7_q_rotational-fps</input>
@@ -727,7 +727,7 @@ you must distribute your contributions under the same license as the original.
 		<input>T4T/velocities/wing/_8_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_left/_8_w-aero-fps">
-		<input>T4T/velocities/w-gf_left-aero-fps</input>
+		<input>T4T/velocities/wing_left/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>-T4T/velocities/wing/_8_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_8_q_rotational-fps</input>
@@ -803,7 +803,7 @@ you must distribute your contributions under the same license as the original.
 		<input>-T4T/velocities/wing/_1_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_right/_1_w-aero-fps">
-		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>T4T/velocities/wing_right/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>T4T/velocities/wing/_1_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_1_q_rotational-fps</input>
@@ -876,7 +876,7 @@ you must distribute your contributions under the same license as the original.
 		<input>-T4T/velocities/wing/_2_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_right/_2_w-aero-fps">
-		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>T4T/velocities/wing_right/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>T4T/velocities/wing/_2_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_2_q_rotational-fps</input>
@@ -949,7 +949,7 @@ you must distribute your contributions under the same license as the original.
 		<input>-T4T/velocities/wing/_3_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_right/_3_w-aero-fps">
-		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>T4T/velocities/wing_right/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>T4T/velocities/wing/_3_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_3_q_rotational-fps</input>
@@ -1022,7 +1022,7 @@ you must distribute your contributions under the same license as the original.
 		<input>-T4T/velocities/wing/_4_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_right/_4_w-aero-fps">
-		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>T4T/velocities/wing_right/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>T4T/velocities/wing/_4_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_4_q_rotational-fps</input>
@@ -1093,7 +1093,7 @@ you must distribute your contributions under the same license as the original.
 		<input>-T4T/velocities/wing/_5_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_right/_5_w-aero-fps">
-		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>T4T/velocities/wing_right/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>T4T/velocities/wing/_5_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_5_q_rotational-fps</input>
@@ -1166,7 +1166,7 @@ you must distribute your contributions under the same license as the original.
 		<input>-T4T/velocities/wing/_6_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_right/_6_w-aero-fps">
-		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>T4T/velocities/wing_right/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>T4T/velocities/wing/_6_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_6_q_rotational-fps</input>
@@ -1239,7 +1239,7 @@ you must distribute your contributions under the same license as the original.
 		<input>-T4T/velocities/wing/_7_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_right/_7_w-aero-fps">
-		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>T4T/velocities/wing_right/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>T4T/velocities/wing/_7_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_7_q_rotational-fps</input>
@@ -1312,7 +1312,7 @@ you must distribute your contributions under the same license as the original.
 		<input>-T4T/velocities/wing/_8_r_rotational-fps</input>
 	</summer>
 	<summer name="T4T/velocities/wing_right/_8_w-aero-fps">
-		<input>T4T/velocities/w-gf_right-aero-fps</input>
+		<input>T4T/velocities/wing_right/groundeffect-fps</input>
 		<input>velocities/w-aero-fps</input>		
 		<input>T4T/velocities/wing/_8_p_rotational-fps</input>
 		<input>T4T/velocities/wing/_8_q_rotational-fps</input>
@@ -1447,15 +1447,15 @@ you must distribute your contributions under the same license as the original.
 	
 	<!-- #### h-stabs #### -->
 	
-	<fcs_function name="T4T/velocities/wing_left/downwash-aero-fps">
+	<fcs_function name="T4T/velocities/wing_left/downwash-fps">
 		<function>
 			<product>
 				<table>
-					<independentVar>aero/alpha-deg</independentVar>
+					<independentVar>T4T/aero/wing_left/_1_alpha-rad</independentVar>
 					<tableData>
-						-31		0 
-						14		1 <!-- This is the angle between back of wing and front of h-stab -->
-						59		0
+						-0.54	0 <!-- -31 degs -->
+						0.24	1 <!-- This is the angle (14 degs) between back of wing and front of h-stab -->
+						1.03	0 <!-- 59 degs -->
 					</tableData>
 				</table>
 				<quotient>
@@ -1467,15 +1467,15 @@ you must distribute your contributions under the same license as the original.
 		</function>
 	</fcs_function>
 
-	<fcs_function name="T4T/velocities/wing_right/downwash-aero-fps">
+	<fcs_function name="T4T/velocities/wing_right/downwash-fps">
 		<function>
 			<product>
 				<table>
-					<independentVar>aero/alpha-deg</independentVar>
+					<independentVar>T4T/aero/wing_right/_1_alpha-rad</independentVar>
 					<tableData>
-						-31		0 
-						14		1 <!-- This is the angle between back of wing and front of h-stab -->
-						59		0
+						-0.54	0 <!-- -31 degs -->
+						0.24	1 <!-- This is the angle (14 degs) between back of wing and front of h-stab -->
+						1.03	0 <!-- 59 degs -->
 					</tableData>
 				</table>
 				<quotient>
@@ -1494,8 +1494,8 @@ you must distribute your contributions under the same license as the original.
 		<input>-T4T/velocities/h-stab/r_rotational-fps</input>
 	</summer>	
 	<summer name="T4T/velocities/h-stab_left/w-aero-fps">
-		<input>T4T/velocities/w-gf_left-aero-fps</input>
-		<input>-T4T/velocities/wing_left/downwash-aero-fps</input>	
+		<input>T4T/velocities/wing_left/groundeffect-fps</input>
+		<input>-T4T/velocities/wing_left/downwash-fps</input>	
 		<input>velocities/w-aero-fps</input>
 		<input>T4T/velocities/h-stab/p_rotational-fps</input>
 		<input>T4T/velocities/h-stab/q_rotational-fps</input>
@@ -1565,8 +1565,8 @@ you must distribute your contributions under the same license as the original.
 	<!-- #### right h-stab #### -->	
 	
 	<summer name="T4T/velocities/h-stab_right/w-aero-fps">
-		<input>T4T/velocities/w-gf_right-aero-fps</input>
-		<input>-T4T/velocities/wing_right/downwash-aero-fps</input>		
+		<input>T4T/velocities/wing_right/groundeffect-fps</input>
+		<input>-T4T/velocities/wing_right/downwash-fps</input>		
 		<input>velocities/w-aero-fps</input>
 		<input>T4T/velocities/h-stab/p_rotational-fps</input>
 		<input>T4T/velocities/h-stab/q_rotational-fps</input>

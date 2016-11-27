@@ -61,8 +61,8 @@ June 2016
 	    <from-model type="bool">true</from-model>
 	    <from-model-idx type="int">0</from-model-idx>
 	    
-	    <x-offset-m archive="y">0</x-offset-m>
-	    <y-offset-m archive="y">0.63</y-offset-m>
+	    <x-offset-m archive="y">-0.25</x-offset-m>
+	    <y-offset-m archive="y">0.5</y-offset-m>
 	    <z-offset-m archive="y">-0.644</z-offset-m>
 	    <pitch-offset-deg>-10</pitch-offset-deg>
 	    <default-field-of-view-deg>72.0</default-field-of-view-deg>
@@ -81,8 +81,7 @@ June 2016
 	    </limits>
 	</config>
   </view>
-  
-	
+		
 	</sim>	
 	
 </PropertyList>

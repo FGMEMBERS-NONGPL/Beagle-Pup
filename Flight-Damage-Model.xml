@@ -56,7 +56,7 @@ you must distribute your contributions under the same license as the original.
 		<property value="55">T4T/metrics/plan-sqft</property> <!-- sqft -->
 
  		<property value="0.8">T4T/metrics/lift_efficiency</property> <!-- 1) Adjust Lift Modifier to give aprox 1600lb lift at 55kts max AoA at level flight -->
- 		<property value="1.04">T4T/metrics/drag_efficiency</property> <!-- 3) Adjust Drag Modifier so as drag equals prop thrust (225lbs) at max speed (108kts) at level flight -->
+ 		<property value="0.95">T4T/metrics/drag_efficiency</property> <!-- 3) Adjust Drag Modifier so as drag equals prop thrust (247lbs) at max speed (108kts) at level flight -->
 			
 
 		 <!--	In the structural frame the X-axis increases from the
@@ -216,9 +216,8 @@ you must distribute your contributions under the same license as the original.
             </location>
         </pointmass>
 		<property value="1"> T4T/damage/fuselage_aft </property>
-
-
-	<!-- #### WINGS #### -->
+	
+<!-- #### WINGS #### -->
 	<!-- #### left #### -->
 
 		<pointmass name="wing_left_1"> <!-- 15 -->
@@ -555,7 +554,8 @@ you must distribute your contributions under the same license as the original.
 			<property value="1"> T4T/damage/h-stab_right </property>
 
 	<!-- #### /TARE WEIGHT #### -->
-
+	
+	
 	<!-- #### REMOVEABLE WEIGHT #### -->
 
 		<pointmass name="pilot">  <!-- 41 -->
@@ -593,7 +593,8 @@ you must distribute your contributions under the same license as the original.
                 <z> -1.21 </z>
             </location>
         </pointmass>
-	
+		
+		
 	<function name="T4T/metrics/wing-sqft">
 		<product>
 			<value>0.5</value>
@@ -605,7 +606,7 @@ you must distribute your contributions under the same license as the original.
 		<quotient>
 			<value> 1 </value>
 			<product>
-				<value>3.14259</value>
+				<pi/>
 				<property>T4T/metrics/lift_efficiency</property>
 				<property>T4T/metrics/wing_aspect</property>
 			</product>
@@ -616,10 +617,9 @@ you must distribute your contributions under the same license as the original.
 
 
 	<function name="T4T/structure/wing/_1_incidence-rad">
-		<product>
-			<value>0.017453</value>
+		<toradians>
 			<property>T4T/structure/wing/_1_incidence-deg</property>
-		</product>
+		</toradians>
 	</function>
 	<function name="T4T/structure/wing/_1_incidence-sin">
 		<sin><property>T4T/structure/wing/_1_incidence-rad</property></sin>
@@ -631,10 +631,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_2_incidence-rad">
 		<sum>
 			<property>T4T/structure/wing/_1_incidence-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_2_incidence-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_2_incidence-sin">
@@ -647,10 +646,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_3_incidence-rad">
 		<sum>
 			<property>T4T/structure/wing/_2_incidence-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_3_incidence-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 
@@ -664,10 +662,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_4_incidence-rad">
 		<sum>
 			<property>T4T/structure/wing/_3_incidence-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_4_incidence-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_4_incidence-sin">
@@ -680,10 +677,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_5_incidence-rad">
 		<sum>
 			<property>T4T/structure/wing/_4_incidence-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_5_incidence-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_5_incidence-sin">
@@ -696,10 +692,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_6_incidence-rad">
 		<sum>
 			<property>T4T/structure/wing/_5_incidence-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_6_incidence-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_6_incidence-sin">
@@ -712,10 +707,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_7_incidence-rad">
 		<sum>
 			<property>T4T/structure/wing/_6_incidence-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_7_incidence-deg</property>
-			</product>	
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_7_incidence-sin">
@@ -728,10 +722,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_8_incidence-rad">
 		<sum>
 			<property>T4T/structure/wing/_7_incidence-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_8_incidence-deg</property>
-			</product>	
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_8_incidence-sin">
@@ -742,10 +735,9 @@ you must distribute your contributions under the same license as the original.
 	</function>
 
 	<function name="T4T/structure/v-stab/incidence-rad">
-		<product>
-			<value>0.017453</value>
+		<toradians>
 			<property>T4T/structure/v-stab/incidence-deg</property>
-		</product>
+		</toradians>
 	</function>
 	<function name="T4T/structure/v-stab/incidence-sin">
 		<sin><property>T4T/structure/v-stab/incidence-rad</property></sin>
@@ -755,10 +747,9 @@ you must distribute your contributions under the same license as the original.
 	</function>
 
 	<function name="T4T/structure/h-stab/incidence-rad">
-		<product>
-			<value>0.017453</value>
+		<toradians>
 			<property>T4T/structure/h-stab/incidence-deg</property>
-		</product>
+		</toradians>
 	</function>
 	<function name="T4T/structure/h-stab/incidence-sin">
 		<sin><property>T4T/structure/h-stab/incidence-rad</property></sin>
@@ -771,10 +762,9 @@ you must distribute your contributions under the same license as the original.
 			<!-- #### DIHEDRAL #### -->
 
 	<function name="T4T/structure/wing/_1_dihedral-rad">
-		<product>
-			<value>0.017453</value>
+		<toradians>
 			<property>T4T/structure/wing/_1_dihedral-deg</property>
-		</product>
+		</toradians>
 	</function>
 	<function name="T4T/structure/wing/_1_dihedral-sin">
 		<sin><property>T4T/structure/wing/_1_dihedral-rad</property></sin>
@@ -786,10 +776,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_2_dihedral-rad">
 		<sum>
 			<property>T4T/structure/wing/_1_dihedral-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_2_dihedral-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_2_dihedral-sin">
@@ -802,10 +791,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_3_dihedral-rad">
 		<sum>
 			<property>T4T/structure/wing/_2_dihedral-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_3_dihedral-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_3_dihedral-sin">
@@ -818,10 +806,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_4_dihedral-rad">
 		<sum>
 			<property>T4T/structure/wing/_3_dihedral-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_4_dihedral-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_4_dihedral-sin">
@@ -834,10 +821,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_5_dihedral-rad">
 		<sum>
 			<property>T4T/structure/wing/_4_dihedral-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_5_dihedral-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_5_dihedral-sin">
@@ -850,10 +836,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_6_dihedral-rad">
 		<sum>
 			<property>T4T/structure/wing/_5_dihedral-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_6_dihedral-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_6_dihedral-sin">
@@ -866,10 +851,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_7_dihedral-rad">
 		<sum>
 			<property>T4T/structure/wing/_6_dihedral-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_7_dihedral-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_7_dihedral-sin">
@@ -882,10 +866,9 @@ you must distribute your contributions under the same license as the original.
 	<function name="T4T/structure/wing/_8_dihedral-rad">
 		<sum>
 			<property>T4T/structure/wing/_7_dihedral-rad</property>
-			<product>
-				<value>0.017453</value>
+			<toradians>
 				<property>T4T/structure/wing/_8_dihedral-deg</property>
-			</product>
+			</toradians>
 		</sum>
 	</function>
 	<function name="T4T/structure/wing/_8_dihedral-sin">
@@ -896,10 +879,9 @@ you must distribute your contributions under the same license as the original.
 	</function>
 
 	<function name="T4T/structure/h-stab/dihedral-rad">
-		<product>
-			<value>0.017453</value>
+		<toradians>
 			<property>T4T/structure/h-stab/dihedral-deg</property>
-		</product>
+		</toradians>
 	</function>
 	<function name="T4T/structure/h-stab/dihedral-sin">
 		<sin><property>T4T/structure/h-stab/dihedral-rad</property></sin>
@@ -919,12 +901,12 @@ you must distribute your contributions under the same license as the original.
 				<z> -4.146 </z>
 			</location>
 			<static_friction>  0.80 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
-            <rolling_friction> 0.02 </rolling_friction>
-            <spring_coeff unit="LBS/FT"> 1010 </spring_coeff> <!--  weight * 0.65 -->
-            <damping_coeff unit="LBS/FT/SEC"> 151.5 </damping_coeff> <!--  spring_coeff * 0.15 -->
-            <damping_coeff_rebound unit="LBS/FT/SEC"> 15.15 </damping_coeff_rebound> <!--  damping_coeff * 0.1 -->
-            <max_steer unit="DEG"> 2 </max_steer>
+			<dynamic_friction> 0.05 </dynamic_friction>
+            <rolling_friction> 0.05 </rolling_friction>
+            <spring_coeff unit="LBS/FT"> 2400 </spring_coeff> <!--  weight * 1.5 -->
+            <damping_coeff unit="LBS/FT/SEC"> 360 </damping_coeff> <!--  spring_coeff * 0.15 -->
+            <damping_coeff_rebound unit="LBS/FT/SEC"> 36 </damping_coeff_rebound> <!--  damping_coeff * 0.1 -->
+            <max_steer unit="DEG"> 10 </max_steer>
             <brake_group> NONE </brake_group>
             <retractable>0</retractable>
         </contact>
@@ -935,9 +917,9 @@ you must distribute your contributions under the same license as the original.
                 <y> -3.28 </y>
                 <z> -4.1 </z>
             </location>
-			<static_friction>  1.0 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
-            <rolling_friction> 0.02 </rolling_friction>
+			<static_friction>  0.80 </static_friction>
+			<dynamic_friction> 0.05 </dynamic_friction>
+            <rolling_friction> 0.05 </rolling_friction>
             <spring_coeff unit="LBS/FT"> 3265 </spring_coeff> <!--  weight * 2.1 -->
             <damping_coeff unit="LBS/FT/SEC"> 490 </damping_coeff> <!--  spring_coeff * 0.15 -->
             <damping_coeff_rebound unit="LBS/FT/SEC"> 49 </damping_coeff_rebound> <!--  damping_coeff * 0.1 -->
@@ -952,9 +934,9 @@ you must distribute your contributions under the same license as the original.
                 <y> 3.28 </y>
                 <z> -4.1 </z>
             </location>
-			<static_friction>  1.0 </static_friction>
-			<dynamic_friction> 0.50 </dynamic_friction>
-            <rolling_friction> 0.02 </rolling_friction>
+			<static_friction>  0.80 </static_friction>
+			<dynamic_friction> 0.05 </dynamic_friction>
+            <rolling_friction> 0.05 </rolling_friction>
             <spring_coeff unit="LBS/FT"> 3265 </spring_coeff> <!--  weight * 2.1 -->
             <damping_coeff unit="LBS/FT/SEC"> 490 </damping_coeff> <!--  spring_coeff * 0.15 -->
             <damping_coeff_rebound unit="LBS/FT/SEC"> 49 </damping_coeff_rebound> <!--  damping_coeff * 0.1 -->
@@ -1078,8 +1060,7 @@ you must distribute your contributions under the same license as the original.
 		</thruster>
 	</engine>
 
-
-	<tank type="FUEL" number="0">
+	<tank type="FUEL" number="0"> <!-- Left wing Tank -->
 		<location unit="FT">
 			<x> 2.66 </x>
 			<y> -5.64 </y>
@@ -1088,8 +1069,8 @@ you must distribute your contributions under the same license as the original.
 		<capacity unit="LBS"> 87 </capacity>
 		<contents unit="LBS"> 87 </contents>
 	</tank>
-
-	<tank type="FUEL" number="1">
+	
+	<tank type="FUEL" number="1"> <!-- Right wing Tank -->
 		<location unit="FT">
 			<x> 2.66 </x>
 			<y> 5.64 </y>
@@ -1097,9 +1078,9 @@ you must distribute your contributions under the same license as the original.
 		</location>
 		<capacity unit="LBS"> 87 </capacity>
 		<contents unit="LBS"> 87 </contents>
-	</tank> 
-
-	<tank type="FUEL" number="2">
+	</tank>
+	
+	<tank type="FUEL" number="2"> <!-- Oil Tank -->
 		<location unit="FT">
 			<x> -1.64 </x>
 			<y> 0.0 </y>
@@ -1110,14 +1091,15 @@ you must distribute your contributions under the same license as the original.
 	</tank>
   
  </propulsion>
-
+	<system file = "T4T/engine"/>
+	
 	<system file = "T4T/angle_of_attack"/>
 	<system file = "T4T/efficiency"/>
 	<system file = "T4T/co-efficients"/>	
  	<system file = "T4T/flight_control"/>	
 	<system file = "T4T/force_calcs"/>
 	<system file = "T4T/moment_calcs"/>
-
+	
 	<aerodynamics>
 	
 	</aerodynamics>
@@ -1165,30 +1147,11 @@ you must distribute your contributions under the same license as the original.
 	
 	<output name="data/Aircraft/Beagle-Pup/Test_Output.csv" type="CSV" rate="10">
 		
-		<property> T4T/forces/wing/lift-lbs </property>
-		<property> T4T/forces/wing/side-lbs </property>
-		<property> T4T/forces/wing/drag-lbs </property>	
-		<property> external_reactions/wing/location-x-in </property>
-		<property> external_reactions/wing/location-y-in </property>
-		<property> external_reactions/wing/location-z-in </property>	
-
-
-		<property> aero/qbar-psf </property>
-		<property> T4T/coefficients/v-stab/Cl-sqft </property>	
-		<property> T4T/aero/v-stab/AoA-rad </property>	
-		
-		<property> T4T/forces/v-stab/lift-lbs </property>
-		<property> T4T/forces/v-stab/drag-lbs </property>	
-		<property> external_reactions/v-stab/location-x-in </property>
-		<property> external_reactions/v-stab/location-y-in </property>
-		<property> external_reactions/v-stab/location-z-in </property>
-		
+		<property> external_reactions/h-stab/location-y-ina </property>
+		<property> external_reactions/h-stab/location-y-inb </property>
+		<property> T4T/moments/h-stab_left/p-lbsft </property>
+		<property> T4T/moments/h-stab_right/p-lbsft </property>
 		<property> T4T/forces/h-stab/lift-lbs </property>
-		<property> T4T/forces/h-stab/side-lbs </property>
-		<property> T4T/forces/h-stab/drag-lbs </property>	
-		<property> external_reactions/h-stab/location-x-in </property>
-		<property> external_reactions/h-stab/location-y-in </property>
-		<property> external_reactions/h-stab/location-z-in </property>
 		
 	</output>
 

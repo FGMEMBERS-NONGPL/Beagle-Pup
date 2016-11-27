@@ -28,10 +28,10 @@ you must distribute your contributions under the same license as the original.
 
 	<channel name="wing" execute="T4T/execute">
 
-	<fcs_function name="T4T/velocities/w-gf_left-aero-fps">
+	<fcs_function name="T4T/velocities/wing_left/groundeffect-fps">
 		<function>
 			<product>			
-				<property>T4T/velocities/wing_left/downwash-aero-fps</property>
+				<property>T4T/velocities/wing_left/downwash-fps</property>
 				<table>
 					<independentVar>aero/h_b-mac-ft</independentVar>
 					<tableData>
@@ -43,10 +43,10 @@ you must distribute your contributions under the same license as the original.
 		</function>
 	</fcs_function>	
 	
-	<fcs_function name="T4T/velocities/w-gf_right-aero-fps">
+	<fcs_function name="T4T/velocities/wing_right/groundeffect-fps">
 		<function>
 			<product>			
-				<property>T4T/velocities/wing_right/downwash-aero-fps</property>
+				<property>T4T/velocities/wing_right/downwash-fps</property>
 				<table>
 					<independentVar>aero/h_b-mac-ft</independentVar>
 					<tableData>
@@ -59,11 +59,11 @@ you must distribute your contributions under the same license as the original.
 	</fcs_function>
 	
 <!--	 
-	<fcs_function name="T4T/velocities/w-gf_left-aero-fps">
+	<fcs_function name="T4T/velocities/wing_left/groundeffect-fps">
 		<function>		
 			<v>0</v>
 		</function>
-		<output> T4T/velocities/w-gf_right-aero-fps </output>
+		<output> T4T/velocities/wing_right/groundeffect-fps </output>
 	</fcs_function>	
 -->	
 

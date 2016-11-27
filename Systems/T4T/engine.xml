@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<system name="propulsion">
+
+		<!--
+	<channel name="pressure">
+
+		<fcs_function name="atmosphere/P-inhg">
+			<function>
+				<quotient>
+					 <property> atmosphere/P-psf </property>
+					 <value> 70.718080418265 </value>
+				</quotient>
+			</function>
+		</fcs_function>
+		
+		<fcs_function name="systems/propulsion/mixture">
+			<function> 
+				<table>
+					<independentVar>atmosphere/P-inhg</independentVar>
+					<tableData>
+						11.83	0.446
+						12.32	0.452
+						12.85	0.459
+						13.4	0.479
+						13.98	0.492
+						14.56	0.505
+						15.17	0.525
+						15.77	0.545
+						16.41	0.588
+						17.08	0.578
+						17.77	0.598
+						18.49	0.624
+						19.21	0.644
+						19.96	0.67
+						20.75	0.697
+						21.55	0.72
+						22.38	0.749
+						23.23	0.776
+						24.1	0.81
+						25.02	0.835
+						25.96	0.861
+						26.95	0.888
+						27.95	0.921
+						28.99	0.9538
+						29.92	1
+			</tableData>
+		</table>
+			</function>
+			<output>fcs/mixture-cmd-norm</output>
+		</fcs_function>		
+
+		
+	</channel>
+-->	
+
+		
+	<channel name="engine[0]">
+	
+	
+		<fcs_function name="atmosphere/P-inhg">
+			<function>
+				<quotient>
+					 <property> atmosphere/P-psf </property>
+					 <value> 70.718080418265 </value>
+				</quotient>
+			</function>
+		</fcs_function>
+	
+		<fcs_function name="propulsion/engine[0]/pepi">
+			<function>
+				<quotient>
+					 <property> atmosphere/P-inhg </property>
+					 <property> propulsion/engine[0]/map-inhg </property>
+				</quotient>
+			</function>
+		</fcs_function>	
+			
+		<fcs_function name="systems/propulsion/volumetric-efficiency">
+		<description>Smaller ve numbers uses more fuel</description>
+			<function> 
+				<table>
+					<independentVar>propulsion/engine[0]/pepi</independentVar>
+					<tableData>
+						1.03	0.86
+						2.559	0.413					
+					</tableData>
+				</table>
+			</function>
+			<output>propulsion/engine[0]/volumetric-efficiency</output>
+		</fcs_function>
+
+		<fcs_function name="systems/propulsion/friction-hp">
+		<description>Smaller bsfc numbers produce more power</description>
+			<function> 
+				<table>
+					<independentVar>propulsion/engine[0]/engine-rpm</independentVar>
+					<tableData>
+						0 		0.01
+						12		0.01
+						45		0.1
+						100		1.0
+					</tableData>
+				</table>
+			</function>
+			<output>propulsion/engine[0]/starter-norm</output> 
+		</fcs_function>
+		
+	</channel>
+	
+</system>
